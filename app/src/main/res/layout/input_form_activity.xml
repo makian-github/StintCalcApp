@@ -22,6 +22,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeText"/>
+
         <Button
             android:id="@+id/setButton"
             android:layout_width="80dp"
@@ -35,6 +40,13 @@
             android:layout_gravity="top"
             android:text="@string/Set" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showTimePickerDialog"
+        android:layout_margin="30dp"
+        android:text="@string/pick_time" />
 
     <FrameLayout
         android:id="@+id/container"
