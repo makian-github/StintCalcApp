@@ -2,4 +2,6 @@
     <string name="app_name">StintCalcApp</string>
     <string name="main">StintCalcApp</string>
     <string name="Set">Set</string>
+    <string name="no_data">"No Data"</string>
+    <string name="pick_time">Pick Time</string>
 </resources>

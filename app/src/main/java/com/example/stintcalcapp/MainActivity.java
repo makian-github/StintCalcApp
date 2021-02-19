@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     private StintData stintData;
     private MyApp myApp;
     private TextView driverName1;
-    int firstStartFlag = 0;
+    int driverNum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         driverName1 = findViewById(R.id.driverName1);
 
-        Button setButton = findViewById(R.id.setButton);
-        setButton.setOnClickListener(new View.OnClickListener() {
+        Button setButton1 = findViewById(R.id.setButton);
+        setButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), InputForm.class);
