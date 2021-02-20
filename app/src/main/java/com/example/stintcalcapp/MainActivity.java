@@ -46,5 +46,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         startTime0.setText(stintData.getRaceData()[0][1]);
+        endTime0.setText(stintData.getRaceData()[0][2]);
     }
 }

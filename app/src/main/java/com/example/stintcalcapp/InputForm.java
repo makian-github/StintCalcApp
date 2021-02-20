@@ -19,11 +19,11 @@ import java.util.Locale;
 
 public class InputForm extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
 
-    private EditText editDriverName;
     private StintData stintData;
     private TextView startTimeText;
     private TextView endTimeText;
     private int stintNum;
+    private int Button;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,18 +36,11 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
         stintData = (StintData) this.getApplication();
         Button setButton = findViewById(R.id.setButton);
         Button timeSetButton = findViewById(R.id.setButton1);
-        editDriverName = findViewById(R.id.edit_driverName);
         startTimeText = findViewById(R.id.startTimeText);
         endTimeText = findViewById(R.id.endTimeText);
 
-
-        setButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String driverName = editDriverName.getText().toString();
-                stintData.setDriverName(driverName);
-            }
-        });
+        startTimeText.setText(stintData.getRaceData()[stintNum][1]);
+        endTimeText.setText(stintData.getRaceData()[stintNum][2]);
 
         timeSetButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +53,7 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
 
                     // パラメータを設定
                     fragmentTransaction.replace(R.id.container,
-                            SampleFragment.newInstance("Fragment"));
+                            SampleFragment.newInstance("Fragment!!"));
                     fragmentTransaction.commit();
             }
         });
@@ -69,16 +62,28 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         String str = String.format(Locale.US, "%d:%d", hourOfDay, minute);
-        startTimeText.setText( str );
-//        EditDriverName.setText(str);
-//        stintData.setDriverName(str);
-        stintData.setStartTime(stintNum,str);
+        if (Button == 0){
+            startTimeText.setText( str );
+            stintData.setStartTime(stintNum,str);
+        }else{
+            endTimeText.setText( str );
+            stintData.setEndTime(stintNum,str);
+        }
+
     }
 
     public void showTimePickerDialog(View v) {
+
         DialogFragment newFragment = new TimePick();
         newFragment.show(getSupportFragmentManager(), "timePicker");
+        Button = 0;
 
+    }
+
+    public void showTimePickerDialog1(View v) {
+        DialogFragment newFragment1 = new TimePick();
+        newFragment1.show(getSupportFragmentManager(), "timePicker1");
+        Button = 1;
     }
 
 }

@@ -24,7 +24,7 @@ public class StintData extends Application {
         for (int i = 0; i < raceData.length; i++) {
             raceData[i][0] = "driver";
             for (int j = 1; j < raceData[1].length; j++) {
-                raceData[i][j]= "0";
+                raceData[i][j]= "00:00";
             }
         }
 
