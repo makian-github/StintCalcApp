@@ -11,9 +11,11 @@ import java.util.Calendar;
 public class TimePick extends DialogFragment implements
         TimePickerDialog.OnTimeSetListener{
 
+
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
         final Calendar c = Calendar.getInstance();
         int hour = c.get(Calendar.HOUR_OF_DAY);
         int minute = c.get(Calendar.MINUTE);

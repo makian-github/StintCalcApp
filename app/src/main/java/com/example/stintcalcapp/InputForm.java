@@ -34,29 +34,11 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
         stintNum = intent.getIntExtra("Stint",0);//設定したkeyで取り出す
 
         stintData = (StintData) this.getApplication();
-        Button setButton = findViewById(R.id.setButton);
-        Button timeSetButton = findViewById(R.id.setButton1);
         startTimeText = findViewById(R.id.startTimeText);
         endTimeText = findViewById(R.id.endTimeText);
 
         startTimeText.setText(stintData.getRaceData()[stintNum][1]);
         endTimeText.setText(stintData.getRaceData()[stintNum][2]);
-
-        timeSetButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-                    // BackStackを設定
-                    fragmentTransaction.addToBackStack(null);
-
-                    // パラメータを設定
-                    fragmentTransaction.replace(R.id.container,
-                            SampleFragment.newInstance("Fragment!!"));
-                    fragmentTransaction.commit();
-            }
-        });
     }
 
     @Override

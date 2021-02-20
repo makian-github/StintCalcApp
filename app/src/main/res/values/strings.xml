@@ -4,5 +4,7 @@
     <string name="Set">Set</string>
     <string name="no_data">"No Data"</string>
     <string name="pick_time">Pick Time</string>
+    <string name="startTime">StartTimeSet</string>
+    <string name="endTime">EndTimeSet</string>
     <string name="def_time">00:00</string>
 </resources>

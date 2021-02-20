@@ -31,12 +31,23 @@ public class MainActivity extends AppCompatActivity {
         startTime1 = findViewById(R.id.startTime1);
         endTime1 = findViewById(R.id.endTime1);
 
-        Button setButton1 = findViewById(R.id.setButton0);
-        setButton1.setOnClickListener(new View.OnClickListener() {
+        Button setButton0 = findViewById(R.id.setButton0);
+        Button setButton1 = findViewById(R.id.setButton1);
+
+        setButton0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), InputForm.class);
                 intent.putExtra("Stint", 0);//第一引数key、第二引数渡したい値
+                startActivity(intent);
+            }
+        });
+
+        setButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), InputForm.class);
+                intent.putExtra("Stint", 1);//第一引数key、第二引数渡したい値
                 startActivity(intent);
             }
         });
@@ -47,5 +58,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         startTime0.setText(stintData.getRaceData()[0][1]);
         endTime0.setText(stintData.getRaceData()[0][2]);
+        startTime1.setText(stintData.getRaceData()[1][1]);
+        endTime1.setText(stintData.getRaceData()[1][2]);
     }
 }
