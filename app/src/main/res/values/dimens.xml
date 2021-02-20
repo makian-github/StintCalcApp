@@ -2,4 +2,5 @@
 <resources>
     <dimen name="textView_height">20dp</dimen>
     <dimen name="textView_width">60dp</dimen>
+    <dimen name="stint_textView_width">40dp</dimen>
 </resources>

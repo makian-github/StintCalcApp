@@ -10,4 +10,5 @@
     <string name="startTimeTxt">開始時間</string>
     <string name="endTimeTxt">終了時間</string>
     <string name="runTimeText">走行時間</string>
+    <string name="stintText">Stint</string>
 </resources>

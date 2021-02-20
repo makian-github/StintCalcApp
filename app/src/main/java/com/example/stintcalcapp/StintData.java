@@ -8,6 +8,7 @@ import static android.content.ContentValues.TAG;
 public class StintData extends Application {
 
     private String driverName = "default";
+    private int allStintCount = 15;
 
     /**
      * [スティント数][データ数]
@@ -15,7 +16,7 @@ public class StintData extends Application {
      * データ1 = スティントの開始の時間
      * データ2 = スティントの終了時間
      */
-    private String raceData[][] = new String[2][3];
+    private String raceData[][] = new String[15][3];
 
     @Override
     public void onCreate() {
@@ -61,6 +62,10 @@ public class StintData extends Application {
 
     public void setEndTime(int stint,String endTime){
         this.raceData[stint][2] = endTime;
+        if (stint != allStintCount){
+            //次のStintの開始時間に時間をセット
+            setStartTime(stint+1,endTime);
+        }
     }
 
 }
