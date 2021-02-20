@@ -11,11 +11,12 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private StintData stintData;
+    private int allStintCount;
     private MyApp myApp;
-    private TextView startTime0;
-    private TextView endTime0;
-    private TextView startTime1;
-    private TextView endTime1;
+    private TextView[] startTime;
+    private TextView[] endTime;
+//    private TextView startTime1;
+//    private TextView endTime1;
     int driverNum = 0;
 
     @Override
@@ -24,12 +25,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         stintData = (StintData) this.getApplication();
-        //stintData.setDriverName("def");
 
-        startTime0 = findViewById(R.id.startTime0);
-        endTime0 = findViewById(R.id.endTime0);
-        startTime1 = findViewById(R.id.startTime1);
-        endTime1 = findViewById(R.id.endTime1);
+        //全スティント数
+        allStintCount = 2;
+
+        //スティントの開始/終了時間のTextViewの定義
+        startTime =  new TextView[allStintCount];
+        endTime = new TextView[allStintCount];
+
+        startTime[0] = findViewById(R.id.startTime0);
+        startTime[1] = findViewById(R.id.startTime1);
+        endTime[0] = findViewById(R.id.endTime0);
+        endTime[1] = findViewById(R.id.endTime1);
 
         Button setButton0 = findViewById(R.id.setButton0);
         Button setButton1 = findViewById(R.id.setButton1);
@@ -56,9 +63,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        startTime0.setText(stintData.getRaceData()[0][1]);
-        endTime0.setText(stintData.getRaceData()[0][2]);
-        startTime1.setText(stintData.getRaceData()[1][1]);
-        endTime1.setText(stintData.getRaceData()[1][2]);
+
+        for (int i = 0; i < stintData.getRaceData().length; i++) {
+            startTime[i].setText(stintData.getRaceData()[i][1]);
+            endTime[i].setText(stintData.getRaceData()[i][2]);
+        }
     }
 }

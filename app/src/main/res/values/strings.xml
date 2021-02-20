@@ -7,4 +7,7 @@
     <string name="startTime">StartTimeSet</string>
     <string name="endTime">EndTimeSet</string>
     <string name="def_time">00:00</string>
+    <string name="startTimeTxt">開始時間</string>
+    <string name="endTimeTxt">終了時間</string>
+    <string name="runTimeText">走行時間</string>
 </resources>

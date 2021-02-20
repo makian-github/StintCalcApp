@@ -7,6 +7,30 @@
     android:background="#def"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/startTimeTxt"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/endTimeTxt"
+            android:textAlignment="center"
+            />
+        <TextView
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/runTimeText"
+            android:textAlignment="center"
+            />
+    </LinearLayout>
 
     <LinearLayout
             android:layout_width="wrap_content"
@@ -15,19 +39,25 @@
 
         <TextView
             android:id="@+id/startTime0"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
             android:textAlignment="center"
             />
         <TextView
             android:id="@+id/endTime0"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
             android:textAlignment="center"
             />
-
+        <TextView
+            android:id="@+id/runTime0"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_time"
+            android:textAlignment="center"
+            />
         <Button
             android:id="@+id/setButton0"
             android:layout_width="80dp"
@@ -43,19 +73,25 @@
 
         <TextView
             android:id="@+id/startTime1"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
             android:textAlignment="center"
             />
         <TextView
             android:id="@+id/endTime1"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
             android:textAlignment="center"
             />
-
+        <TextView
+            android:id="@+id/runTime1"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_time"
+            android:textAlignment="center"
+            />
         <Button
             android:id="@+id/setButton1"
             android:layout_width="80dp"
