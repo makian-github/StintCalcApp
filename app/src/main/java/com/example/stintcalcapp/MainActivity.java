@@ -12,7 +12,10 @@ public class MainActivity extends AppCompatActivity {
 
     private StintData stintData;
     private MyApp myApp;
-    private TextView driverName1;
+    private TextView startTime0;
+    private TextView endTime0;
+    private TextView startTime1;
+    private TextView endTime1;
     int driverNum = 0;
 
     @Override
@@ -23,13 +26,17 @@ public class MainActivity extends AppCompatActivity {
         stintData = (StintData) this.getApplication();
         //stintData.setDriverName("def");
 
-        driverName1 = findViewById(R.id.driverName1);
+        startTime0 = findViewById(R.id.startTime0);
+        endTime0 = findViewById(R.id.endTime0);
+        startTime1 = findViewById(R.id.startTime1);
+        endTime1 = findViewById(R.id.endTime1);
 
-        Button setButton1 = findViewById(R.id.setButton);
+        Button setButton1 = findViewById(R.id.setButton0);
         setButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), InputForm.class);
+                intent.putExtra("Stint", 0);//第一引数key、第二引数渡したい値
                 startActivity(intent);
             }
         });
@@ -38,6 +45,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-            driverName1.setText(stintData.getDriverName());
+        startTime0.setText(stintData.getRaceData()[0][1]);
     }
 }

@@ -1,7 +1,7 @@
 package com.example.stintcalcapp;
 
-import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,25 +19,32 @@ import java.util.Locale;
 
 public class InputForm extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
 
-    private EditText EditDriverName;
+    private EditText editDriverName;
     private StintData stintData;
-    private TextView timeText;
+    private TextView startTimeText;
+    private TextView endTimeText;
+    private int stintNum;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.input_form_activity);
 
+        Intent intent = getIntent();
+        stintNum = intent.getIntExtra("Stint",0);//設定したkeyで取り出す
+
         stintData = (StintData) this.getApplication();
         Button setButton = findViewById(R.id.setButton);
         Button timeSetButton = findViewById(R.id.setButton1);
-        EditDriverName = findViewById(R.id.edit_driverName);
-        timeText = findViewById(R.id.timeText);
+        editDriverName = findViewById(R.id.edit_driverName);
+        startTimeText = findViewById(R.id.startTimeText);
+        endTimeText = findViewById(R.id.endTimeText);
+
 
         setButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String driverName = EditDriverName.getText().toString();
+                String driverName = editDriverName.getText().toString();
                 stintData.setDriverName(driverName);
             }
         });
@@ -62,9 +69,10 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         String str = String.format(Locale.US, "%d:%d", hourOfDay, minute);
-        timeText.setText( str );
+        startTimeText.setText( str );
 //        EditDriverName.setText(str);
-        stintData.setDriverName(str);
+//        stintData.setDriverName(str);
+        stintData.setStartTime(stintNum,str);
     }
 
     public void showTimePickerDialog(View v) {
