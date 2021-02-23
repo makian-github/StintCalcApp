@@ -57,7 +57,7 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        String str = String.format(Locale.US, "%d:%d", hourOfDay, minute);
+        String str = String.format(Locale.US, "%02d:%02d", hourOfDay, minute);
         if (Button == 0){
             startTimeText.setText( str );
             stintData.setStartTime(stintNum,str);
@@ -69,18 +69,30 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
     }
 
     public void showTimePickerDialog(View v) {
+        String[] times = stintData.getRaceData()[stintNum][1].toString().split(":");
+        int hour = Integer.parseInt(times[0]);
+        int minute = Integer.parseInt(times[1]);
+
+        String startTime = String.format("%02d:%02d",hour,minute);
 
         DialogFragment newFragment = new TimePick();
-        newFragment.show(getSupportFragmentManager(), "timePicker");
+        newFragment.show(getSupportFragmentManager(), startTime);
         Button = 0;
 
     }
 
     public void showTimePickerDialog1(View v) {
+        String[] times = stintData.getRaceData()[stintNum][2].toString().split(":");
+        int hour = Integer.parseInt(times[0]);
+        int minute = Integer.parseInt(times[1]);
+
+        String endTime = String.format("%02d:%02d",hour,minute);
+
         DialogFragment newFragment1 = new TimePick();
-        newFragment1.show(getSupportFragmentManager(), "timePicker1");
+        newFragment1.show(getSupportFragmentManager(), endTime);
         Button = 1;
     }
+
 
 }
 

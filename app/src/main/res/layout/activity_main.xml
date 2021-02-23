@@ -48,11 +48,12 @@
             android:text="@string/stintText"
             />
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="@dimen/btn_height"
             android:id="@+id/perStintCalcBtn"
             android:text="@string/calcBtn"
             android:layout_marginLeft="10dp"
+            android:textAllCaps="false"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -72,12 +73,20 @@
             android:text="@string/minute"
             />
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="@dimen/btn_height"
             android:id="@+id/perStintSetBtn"
             android:text="@string/Set"
             android:layout_marginLeft="10dp"
+            android:textAllCaps="false"
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_height"
+            android:id="@+id/refreshBtn"
+            android:text="@string/refresh"
+            android:textAllCaps="false"
+            android:layout_marginLeft="10dp"/>
     </LinearLayout>
 
     <LinearLayout

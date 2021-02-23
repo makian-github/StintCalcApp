@@ -18,4 +18,5 @@
     <string name="minute">min</string>
     <string name="calcBtn">Calc</string>
     <string name="raceTimeText">レース時間= </string>
+    <string name="refresh">refresh</string>
 </resources>

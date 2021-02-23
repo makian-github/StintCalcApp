@@ -29,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
         stintData = (StintData) this.getApplication();
 
         //Maxスティント数
@@ -122,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         Button setButton14 = findViewById(R.id.setButton14);
         Button perStintCalcBtn = findViewById(R.id.perStintCalcBtn);
         Button perStintSetBtn = findViewById(R.id.perStintSetBtn);
+        Button refreshBtn = findViewById(R.id.refreshBtn);
 
         perStintTimeTextView = findViewById(R.id.perStintText);
         allStintTextEditText = findViewById(R.id.allStintEditText);
@@ -146,7 +155,17 @@ public class MainActivity extends AppCompatActivity {
                         stintData.setEndTime(i,calcPlusTime(stintData.getRaceData()[i][1],stintData.getPerStintTime()));
                     }
                 }
-                stintData.getRaceData()[stintData.getStintCnt()-1][2] = calcPlusTime(stintData.getRaceData()[stintData.getStintCnt()][2],raceTime);
+                stintData.getRaceData()[stintData.getStintCnt()-1][2] = calcPlusTime(stintData.getRaceData()[0][1],raceTime);
+                Log.d("@@", "onClick: stintData.getRaceData()[0][1]" + stintData.getRaceData()[0][1]);
+                Log.d("@@", "onClick: raceTime" + raceTime);
+                Log.d("@@", "onClick: stintData.getRaceData()[stintData.getStintCnt()-1][2]" + stintData.getRaceData()[stintData.getStintCnt()-1][2]);
+                displayUpdate();
+            }
+        });
+
+        refreshBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 displayUpdate();
             }
         });
@@ -286,11 +305,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
         displayUpdate();
     }
 
