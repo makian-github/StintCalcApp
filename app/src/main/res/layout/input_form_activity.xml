@@ -50,6 +50,28 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:text="@string/def_driver"
+            android:id="@+id/driverText"/>
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="@string/driverBtn"
+            android:textAllCaps="false"
+            android:id="@+id/driverSetBtn"/>
+
+    </LinearLayout>
+
 
 
     <FrameLayout

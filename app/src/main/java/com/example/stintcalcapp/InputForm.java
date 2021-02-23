@@ -22,6 +22,8 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
     private StintData stintData;
     private TextView startTimeText;
     private TextView endTimeText;
+    private EditText driverNameText;
+    private Button driverSetBtn;
     private int stintNum;
     private int Button;
 
@@ -39,6 +41,18 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
 
         startTimeText.setText(stintData.getRaceData()[stintNum][1]);
         endTimeText.setText(stintData.getRaceData()[stintNum][2]);
+
+        driverNameText = findViewById(R.id.driverText);
+        driverSetBtn = findViewById(R.id.driverSetBtn);
+
+        driverSetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = driverNameText.getText().toString();
+                stintData.setDriver(stintNum,name);
+            }
+        });
+
     }
 
     @Override

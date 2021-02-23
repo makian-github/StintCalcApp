@@ -3,9 +3,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#def"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/raceTimeText"
+            />
+
+        <EditText
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/raceTimeEditText"
+            android:text="0"
+            android:textAlignment="viewEnd"
+            android:maxLines="1"
+            android:inputType="number"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minute"
+            />
+
+        <EditText
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/allStintEditText"
+            android:text="0"
+            android:layout_marginLeft="10dp"
+            android:textAlignment="viewEnd"
+            android:maxLines="1"
+            android:inputType="number"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stintText"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_height"
+            android:id="@+id/perStintCalcBtn"
+            android:text="@string/calcBtn"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/perStintTxt"
+            android:layout_marginLeft="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"
+            android:id="@+id/perStintText"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minute"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_height"
+            android:id="@+id/perStintSetBtn"
+            android:text="@string/Set"
+            android:layout_marginLeft="10dp"
+            />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -16,62 +89,73 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/stintText"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/startTimeTxt"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/endTimeTxt"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/runTimeText"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/driverNameText"
+            android:textAlignment="center" />
+
     </LinearLayout>
 
     <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="1"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime0"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime0"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime0"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver0"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton0"
             android:layout_width="80dp"
@@ -89,30 +173,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="2"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime1"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime1"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime1"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver1"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton1"
             android:layout_width="80dp"
@@ -130,30 +220,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="3"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime2"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime2"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime2"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver2"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton2"
             android:layout_width="80dp"
@@ -171,30 +267,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="4"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime3"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime3"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime3"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver3"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton3"
             android:layout_width="80dp"
@@ -212,30 +314,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="5"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime4"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime4"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime4"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver4"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton4"
             android:layout_width="80dp"
@@ -253,30 +361,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="6"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime5"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime5"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime5"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver5"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton5"
             android:layout_width="80dp"
@@ -294,30 +408,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="7"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime6"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime6"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime6"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver6"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton6"
             android:layout_width="80dp"
@@ -335,30 +455,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="8"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime7"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime7"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime7"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver7"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton7"
             android:layout_width="80dp"
@@ -376,30 +502,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="9"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime8"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime8"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime8"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver8"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton8"
             android:layout_width="80dp"
@@ -417,30 +549,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="10"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime9"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime9"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime9"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver9"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton9"
             android:layout_width="80dp"
@@ -458,30 +596,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="11"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime10"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime10"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime10"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver10"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton10"
             android:layout_width="80dp"
@@ -499,30 +643,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="12"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime11"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime11"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime11"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver11"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton11"
             android:layout_width="80dp"
@@ -540,30 +690,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="13"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime12"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime12"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime12"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver12"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton12"
             android:layout_width="80dp"
@@ -581,30 +737,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="14"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime13"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime13"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime13"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver13"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton13"
             android:layout_width="80dp"
@@ -622,30 +784,36 @@
             android:layout_width="@dimen/stint_textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="15"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:id="@+id/startTime14"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/endTime14"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
         <TextView
             android:id="@+id/runTime14"
             android:layout_width="@dimen/textView_width"
             android:layout_height="@dimen/textView_height"
             android:text="@string/def_time"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/driver14"
+            android:layout_width="@dimen/textView_width"
+            android:layout_height="@dimen/textView_height"
+            android:text="@string/def_driver"
+            android:textAlignment="center" />
+
         <Button
             android:id="@+id/setButton14"
             android:layout_width="80dp"

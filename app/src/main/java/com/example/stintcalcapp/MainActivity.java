@@ -7,15 +7,22 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private StintData stintData;
-    private int allStintCount;
+    private int maxStintCount;
     private TextView[] startTimeTextView;
     private TextView[] endTimeTextView;
     private TextView[] runTimeTextView;
+    private TextView[] driverTimeTextView;
+    private TextView perStintTimeTextView;
+    private EditText allStintTextEditText;
+    private EditText raceTimeEditText;
+    private int raceTime;
+    private int allStint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +31,14 @@ public class MainActivity extends AppCompatActivity {
 
         stintData = (StintData) this.getApplication();
 
-        //全スティント数
-        allStintCount = 15;
+        //Maxスティント数
+        maxStintCount = stintData.getMaxStintCount();
 
         //スティントの開始/終了時間のTextViewの定義
-        startTimeTextView =  new TextView[allStintCount];
-        endTimeTextView = new TextView[allStintCount];
-        runTimeTextView = new TextView[allStintCount];
+        startTimeTextView =  new TextView[maxStintCount];
+        endTimeTextView = new TextView[maxStintCount];
+        runTimeTextView = new TextView[maxStintCount];
+        driverTimeTextView = new TextView[maxStintCount];
 
         //idの紐づけ
         startTimeTextView[0] = findViewById(R.id.startTime0);
@@ -81,6 +89,22 @@ public class MainActivity extends AppCompatActivity {
         runTimeTextView[13] = findViewById(R.id.runTime13);
         runTimeTextView[14] = findViewById(R.id.runTime14);
 
+        driverTimeTextView[0] = findViewById(R.id.driver0);
+        driverTimeTextView[1] = findViewById(R.id.driver1);
+        driverTimeTextView[2] = findViewById(R.id.driver2);
+        driverTimeTextView[3] = findViewById(R.id.driver3);
+        driverTimeTextView[4] = findViewById(R.id.driver4);
+        driverTimeTextView[5] = findViewById(R.id.driver5);
+        driverTimeTextView[6] = findViewById(R.id.driver6);
+        driverTimeTextView[7] = findViewById(R.id.driver7);
+        driverTimeTextView[8] = findViewById(R.id.driver8);
+        driverTimeTextView[9] = findViewById(R.id.driver9);
+        driverTimeTextView[10] = findViewById(R.id.driver10);
+        driverTimeTextView[11] = findViewById(R.id.driver11);
+        driverTimeTextView[12] = findViewById(R.id.driver12);
+        driverTimeTextView[13] = findViewById(R.id.driver13);
+        driverTimeTextView[14] = findViewById(R.id.driver14);
+
         Button setButton0 = findViewById(R.id.setButton0);
         Button setButton1 = findViewById(R.id.setButton1);
         Button setButton2 = findViewById(R.id.setButton2);
@@ -96,7 +120,36 @@ public class MainActivity extends AppCompatActivity {
         Button setButton12 = findViewById(R.id.setButton12);
         Button setButton13 = findViewById(R.id.setButton13);
         Button setButton14 = findViewById(R.id.setButton14);
+        Button perStintCalcBtn = findViewById(R.id.perStintCalcBtn);
+        Button perStintSetBtn = findViewById(R.id.perStintSetBtn);
 
+        perStintTimeTextView = findViewById(R.id.perStintText);
+        allStintTextEditText = findViewById(R.id.allStintEditText);
+        raceTimeEditText = findViewById(R.id.raceTimeEditText);
+
+        raceTime = Integer.parseInt(raceTimeEditText.getText().toString());
+        allStint = Integer.parseInt(allStintTextEditText.getText().toString());
+
+        perStintCalcBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stintData.setStintCnt(allStint);
+                perStintTimeCalc();
+            }
+        });
+
+        perStintSetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                perStintTimeCalc();
+                if(stintData.getPerStintTime() != 0){
+                    for (int i = 0; i <allStint; i++) {
+                        stintData.setEndTime(i,calcPlusTime(stintData.getRaceData()[i][1],stintData.getPerStintTime()));
+                    }
+                }
+                displayUpdate();
+            }
+        });
 
         setButton0.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -238,12 +291,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        for (int i = 0; i < stintData.getRaceData().length; i++) {
-            startTimeTextView[i].setText(stintData.getRaceData()[i][1]);
-            endTimeTextView[i].setText(stintData.getRaceData()[i][2]);
-            runTimeTextView[i].setText(runTimeCalc(stintData.getRaceData()[i][1],stintData.getRaceData()[i][2]));
-        }
+        displayUpdate();
     }
 
     //引数で渡された時刻の時刻差を計算
@@ -277,7 +325,11 @@ public class MainActivity extends AppCompatActivity {
         return runtime;
     }
 
-    //00:00から時(Hour)を抽出
+    /**
+     * 00:00(time)から時(Hour)を抽出
+     * @param time 00:00
+     * @return hour
+     */
     private int hourExtraction(String time) {
         int hour;
 
@@ -287,7 +339,11 @@ public class MainActivity extends AppCompatActivity {
         return hour;
     }
 
-    //00:00から分(minutes)を抽出
+    /**
+     * 00:00(time)から分(minutes)を抽出
+     * @param time 00:00
+     * @return minutes
+     */
     private int minutesExtraction(String time) {
         int minutes;
 
@@ -297,4 +353,54 @@ public class MainActivity extends AppCompatActivity {
         return minutes;
     }
 
+    /**
+     * 引数で渡された時刻(time)に時間(plusTime)を足した時刻を返す
+     * @param time 時刻(00:00)
+     * @param plusTime 足したい時間
+     * @return time + plusTimeの時刻
+     */
+    private String calcPlusTime(String time , int plusTime) {
+
+        int timeHour = hourExtraction(time);
+        int timeMin = minutesExtraction(time);
+
+        //引数で渡された値に1Stint当たりの走行時間を足す
+        int endTime = timeHour * 60 + timeMin + stintData.getPerStintTime();
+
+        //00:00の書式でreturn
+        String returnTime = String.format("%d:%02d", endTime / 60, endTime % 60);
+
+        return returnTime;
+    }
+
+    /**
+     * レース時間(raceTimeEditText)とスティント数(allStintTextEditText)から
+     * 1スティントあたりの走行時間を算出
+     * 算出結果を"PerStintTimeTextViewへ表示"と"StintDataのperStintTimeへ値をSetする"
+     */
+    private void perStintTimeCalc(){
+        try {
+            raceTime = Integer.parseInt(raceTimeEditText.getText().toString());
+            allStint = Integer.parseInt(allStintTextEditText.getText().toString());
+            int perStint = Math.round(raceTime/allStint);
+
+            perStintTimeTextView.setText(String.valueOf(perStint));
+            stintData.setPerStintTime(perStint);
+        }catch (Exception e){
+            Log.d("Exception", "onClick: " + e);
+        }
+    }
+
+    /**
+     * 表示を更新
+     * StintDataから値を取得
+     */
+    private void displayUpdate(){
+        for (int i = 0; i < stintData.getRaceData().length; i++) {
+            startTimeTextView[i].setText(stintData.getRaceData()[i][1]);
+            endTimeTextView[i].setText(stintData.getRaceData()[i][2]);
+            runTimeTextView[i].setText(runTimeCalc(stintData.getRaceData()[i][1],stintData.getRaceData()[i][2]));
+            driverTimeTextView[i].setText(stintData.getRaceData()[i][3]);
+        }
+    }
 }

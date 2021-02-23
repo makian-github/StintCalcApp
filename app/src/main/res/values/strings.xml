@@ -11,4 +11,11 @@
     <string name="endTimeTxt">終了時間</string>
     <string name="runTimeText">走行時間</string>
     <string name="stintText">Stint</string>
+    <string name="driverNameText">Driver</string>
+    <string name="def_driver">-</string>
+    <string name="driverBtn">DriverSet</string>
+    <string name="perStintTxt">1Stint＝</string>
+    <string name="minute">min</string>
+    <string name="calcBtn">Calc</string>
+    <string name="raceTimeText">レース時間= </string>
 </resources>
