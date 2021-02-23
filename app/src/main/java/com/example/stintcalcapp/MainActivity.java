@@ -133,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
         perStintCalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stintData.setStintCnt(allStint);
                 perStintTimeCalc();
             }
         });
@@ -143,10 +142,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 perStintTimeCalc();
                 if(stintData.getPerStintTime() != 0){
-                    for (int i = 0; i <allStint; i++) {
+                    for (int i = 0; i <stintData.getStintCnt(); i++) {
                         stintData.setEndTime(i,calcPlusTime(stintData.getRaceData()[i][1],stintData.getPerStintTime()));
                     }
                 }
+                stintData.getRaceData()[stintData.getStintCnt()-1][2] = calcPlusTime(stintData.getRaceData()[stintData.getStintCnt()][2],raceTime);
                 displayUpdate();
             }
         });
@@ -365,7 +365,7 @@ public class MainActivity extends AppCompatActivity {
         int timeMin = minutesExtraction(time);
 
         //引数で渡された値に1Stint当たりの走行時間を足す
-        int endTime = timeHour * 60 + timeMin + stintData.getPerStintTime();
+        int endTime = timeHour * 60 + timeMin + plusTime;
 
         //00:00の書式でreturn
         String returnTime = String.format("%d:%02d", endTime / 60, endTime % 60);
@@ -379,6 +379,8 @@ public class MainActivity extends AppCompatActivity {
      * 算出結果を"PerStintTimeTextViewへ表示"と"StintDataのperStintTimeへ値をSetする"
      */
     private void perStintTimeCalc(){
+        stintData.setStintCnt(allStint);
+        stintData.clearRaceData();
         try {
             raceTime = Integer.parseInt(raceTimeEditText.getText().toString());
             allStint = Integer.parseInt(allStintTextEditText.getText().toString());

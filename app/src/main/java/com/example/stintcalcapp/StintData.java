@@ -93,4 +93,16 @@ public class StintData extends Application {
     public void setStintCnt(int stintCnt) {
         this.stintCnt = stintCnt;
     }
+
+    /**
+     * Stint数よりも先のデータを初期化
+     */
+    public void clearRaceData(){
+        for (int i = stintCnt; i < maxStintCount; i++) {
+            raceData[i][0] = "0";
+            raceData[i][1] = "00:00";
+            raceData[i][2] = "00:00";
+            raceData[i][3] = "-";
+        }
+    }
 }
