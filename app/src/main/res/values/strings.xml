@@ -19,4 +19,5 @@
     <string name="calcBtn">Calc</string>
     <string name="raceTimeText">レース時間= </string>
     <string name="refresh">refresh</string>
+    <string name="uniformity">均等割り</string>
 </resources>

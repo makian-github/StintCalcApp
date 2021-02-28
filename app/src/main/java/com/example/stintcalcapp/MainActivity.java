@@ -1,5 +1,6 @@
 package com.example.stintcalcapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView perStintTimeTextView;
     private EditText allStintTextEditText;
     private EditText raceTimeEditText;
+    private CheckBox[] flagCheckBox;
     private int raceTime;
     private int allStint;
 
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         endTimeTextView = new TextView[maxStintCount];
         runTimeTextView = new TextView[maxStintCount];
         driverTimeTextView = new TextView[maxStintCount];
+        flagCheckBox = new CheckBox[maxStintCount];
 
         //idの紐づけ
         startTimeTextView[0] = findViewById(R.id.startTime0);
@@ -113,6 +117,22 @@ public class MainActivity extends AppCompatActivity {
         driverTimeTextView[13] = findViewById(R.id.driver13);
         driverTimeTextView[14] = findViewById(R.id.driver14);
 
+        flagCheckBox[0] = findViewById(R.id.checkbox0);
+        flagCheckBox[1] = findViewById(R.id.checkbox1);
+        flagCheckBox[2] = findViewById(R.id.checkbox2);
+        flagCheckBox[3] = findViewById(R.id.checkbox3);
+        flagCheckBox[4] = findViewById(R.id.checkbox4);
+        flagCheckBox[5] = findViewById(R.id.checkbox5);
+        flagCheckBox[6] = findViewById(R.id.checkbox6);
+        flagCheckBox[7] = findViewById(R.id.checkbox7);
+        flagCheckBox[8] = findViewById(R.id.checkbox8);
+        flagCheckBox[9] = findViewById(R.id.checkbox9);
+        flagCheckBox[10] = findViewById(R.id.checkbox10);
+        flagCheckBox[11] = findViewById(R.id.checkbox11);
+        flagCheckBox[12] = findViewById(R.id.checkbox12);
+        flagCheckBox[13] = findViewById(R.id.checkbox13);
+        flagCheckBox[14] = findViewById(R.id.checkbox14);
+
         Button setButton0 = findViewById(R.id.setButton0);
         Button setButton1 = findViewById(R.id.setButton1);
         Button setButton2 = findViewById(R.id.setButton2);
@@ -131,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
         Button perStintCalcBtn = findViewById(R.id.perStintCalcBtn);
         Button perStintSetBtn = findViewById(R.id.perStintSetBtn);
         Button refreshBtn = findViewById(R.id.refreshBtn);
+        Button uniformityBtn = findViewById(R.id.uniformity);
 
         perStintTimeTextView = findViewById(R.id.perStintText);
         allStintTextEditText = findViewById(R.id.allStintEditText);
@@ -149,16 +170,40 @@ public class MainActivity extends AppCompatActivity {
         perStintSetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                perStintTimeCalc();
-                if(stintData.getPerStintTime() != 0){
-                    for (int i = 0; i <stintData.getStintCnt(); i++) {
-                        stintData.setEndTime(i,calcPlusTime(stintData.getRaceData()[i][1],stintData.getPerStintTime()));
+                Log.d("123", "onClick: stintData.getStintCnt()" + stintData.getStintCnt());
+                Log.d("123", "onClick: maxStintCount" +  maxStintCount);
+                if (allStint > 0 && allStint <= maxStintCount) {
+                    perStintTimeCalc();
+                    if (stintData.getPerStintTime() != 0) {
+                        for (int i = 0; i < stintData.getStintCnt(); i++) {
+                            stintData.setEndTime(i, calcPlusTime(stintData.getRaceData()[i][1], stintData.getPerStintTime()));
+                        }
+                    }
+
+                    stintData.getRaceData()[stintData.getStintCnt() - 1][2] = calcPlusTime(stintData.getRaceData()[0][1], raceTime);
+                    Log.d("@@", "onClick: stintData.getRaceData()[0][1]" + stintData.getRaceData()[0][1]);
+                    Log.d("@@", "onClick: raceTime" + raceTime);
+                    Log.d("@@", "onClick: stintData.getRaceData()[stintData.getStintCnt()-1][2]" + stintData.getRaceData()[stintData.getStintCnt() - 1][2]);
+                    displayUpdate();
+                }
+            }
+        });
+
+        uniformityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //checkBoxにチェックが入っている最後のStintを検出
+                for (int i = maxStintCount-1; i >= 0; i--) {
+                    Log.d("TAG", "onClick: flagCheckBox[" + i + "].isChecked() = " + flagCheckBox[i].isChecked());
+                    if (flagCheckBox[i].isChecked()){
+                        String uniformityStartTime = stintData.getRaceData()[i][1];
+                        String uniformityEndTime = stintData.getRaceData()[allStint-1][2];
+                        Log.d("TAG", "onClick: uniformityStartTime = " + uniformityStartTime);
+                        Log.d("TAG", "onClick: uniformityEndTime = " + uniformityEndTime);
+                        uniformitySet(uniformityStartTime,uniformityEndTime,i);
+                        break;
                     }
                 }
-                stintData.getRaceData()[stintData.getStintCnt()-1][2] = calcPlusTime(stintData.getRaceData()[0][1],raceTime);
-                Log.d("@@", "onClick: stintData.getRaceData()[0][1]" + stintData.getRaceData()[0][1]);
-                Log.d("@@", "onClick: raceTime" + raceTime);
-                Log.d("@@", "onClick: stintData.getRaceData()[stintData.getStintCnt()-1][2]" + stintData.getRaceData()[stintData.getStintCnt()-1][2]);
                 displayUpdate();
             }
         });
@@ -309,7 +354,12 @@ public class MainActivity extends AppCompatActivity {
         displayUpdate();
     }
 
-    //引数で渡された時刻の時刻差を計算
+    /**
+     * 引数で渡された時刻の時刻差を計算
+     * @param startTime
+     * @param endTime
+     * @return startTimeとendTimeの時間差(書式は00:00)
+     */
     private String runTimeCalc(String startTime,String endTime){
         String runtime;
 
@@ -384,6 +434,7 @@ public class MainActivity extends AppCompatActivity {
 
         //00:00の書式でreturn
         String returnTime = String.format("%d:%02d", endTime / 60, endTime % 60);
+        Log.d("TAG", "calcPlusTime: returnTime = " + returnTime);
 
         return returnTime;
     }
@@ -406,6 +457,34 @@ public class MainActivity extends AppCompatActivity {
         }catch (Exception e){
             Log.d("Exception", "onClick: " + e);
         }
+    }
+
+    private void uniformitySet(String startTime,String endTime,int stint){
+        try {
+            String time = runTimeCalc(startTime,endTime);
+            int time_min = convertTimeToMin(time);
+            int remainingStint = allStint - stint;
+            Log.d("TAG", "onClick: remainingStint = " + remainingStint);
+            int perStint = Math.round(time_min/remainingStint);
+
+            Log.d("TAG", "uniformitySet: perStint" + perStint);
+
+            for (int i = stint; i < allStint; i++) {
+                stintData.setEndTime(i, calcPlusTime(stintData.getRaceData()[i][1], perStint));
+            }
+
+        }catch (Exception e){
+            Log.d("Exception", "onClick: " + e);
+        }
+    }
+
+    /**
+     * 00:00の書式から分に変換
+     * @return
+     */
+    private int convertTimeToMin(String time){
+        int minTime = hourExtraction(time)*60 + minutesExtraction(time);
+        return minTime;
     }
 
     /**

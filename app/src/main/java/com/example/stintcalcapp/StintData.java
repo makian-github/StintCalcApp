@@ -60,7 +60,7 @@ public class StintData extends Application {
 
     public void setEndTime(int stint, String endTime) {
         this.raceData[stint][2] = endTime;
-        if (stint != maxStintCount-1 && stint != stintCnt-1) {
+        if (stint < maxStintCount-1 && stint != stintCnt-1) {
             //次のStintの開始時間に時間をセット
             setStartTime(stint + 1, endTime);
         }
