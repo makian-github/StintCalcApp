@@ -20,4 +20,8 @@
     <string name="raceTimeText">レース時間= </string>
     <string name="refresh">refresh</string>
     <string name="uniformity">均等割り</string>
+    <string name="check_item_text">選択項目にセット</string>
+    <string name="all_check_text">All Check</string>
+    <string name="all_uncheck_text">All Uncheck</string>
+    <string name="check_revers_text">rev Check</string>
 </resources>

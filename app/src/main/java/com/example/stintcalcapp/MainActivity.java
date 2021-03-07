@@ -23,9 +23,13 @@ public class MainActivity extends AppCompatActivity {
     private TextView perStintTimeTextView;
     private EditText allStintTextEditText;
     private EditText raceTimeEditText;
+    private EditText setMinEditText;
     private CheckBox[] flagCheckBox;
     private int raceTime;
     private int allStint;
+    private int setRunMin;
+    private boolean[] flagCheckBoxes;
+    private int[] runTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         runTimeTextView = new TextView[maxStintCount];
         driverTimeTextView = new TextView[maxStintCount];
         flagCheckBox = new CheckBox[maxStintCount];
+
+        //各Stintの走行時間の定義
+        runTime = new int[maxStintCount];
+
+        flagCheckBoxes = new boolean[maxStintCount];
 
         //idの紐づけ
         startTimeTextView[0] = findViewById(R.id.startTime0);
@@ -152,13 +161,20 @@ public class MainActivity extends AppCompatActivity {
         Button perStintSetBtn = findViewById(R.id.perStintSetBtn);
         Button refreshBtn = findViewById(R.id.refreshBtn);
         Button uniformityBtn = findViewById(R.id.uniformity);
+        Button checkItemSetBtn = findViewById(R.id.setMinuteBtn);
+
+        Button allCheckBtn = findViewById(R.id.allCheckBtn);
+        Button allUncheckBtn = findViewById(R.id.allUncheckBtn);
+        Button reversCheckBtn = findViewById(R.id.reverseBtn);
 
         perStintTimeTextView = findViewById(R.id.perStintText);
         allStintTextEditText = findViewById(R.id.allStintEditText);
         raceTimeEditText = findViewById(R.id.raceTimeEditText);
+        setMinEditText = findViewById(R.id.setTimeEditText);
 
         raceTime = Integer.parseInt(raceTimeEditText.getText().toString());
         allStint = Integer.parseInt(allStintTextEditText.getText().toString());
+        setRunMin = Integer.parseInt(setMinEditText.getText().toString());
 
         perStintCalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -215,6 +231,49 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * 選択項目にセットするボタン
+         */
+        checkItemSetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setRunMin = Integer.parseInt(setMinEditText.getText().toString());
+                setCheckBoxes();
+                setRunTimeArray();
+                flagItemSetMin(setRunMin);
+                displayUpdate();
+            }
+        });
+
+        /**
+         * AllCheckBtn
+         */
+        allCheckBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = 0; i < allStint; i++) {
+                    flagCheckBox[i].setChecked(true);
+                }
+            }
+        });
+
+        allUncheckBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = 0; i < maxStintCount; i++) {
+                    flagCheckBox[i].setChecked(false);
+                }
+            }
+        });
+
+        reversCheckBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = 0; i < allStint; i++) {
+                    flagCheckBox[i].setChecked(!flagCheckBox[i].isChecked());
+                }
+            }
+        });
         setButton0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -363,8 +422,8 @@ public class MainActivity extends AppCompatActivity {
     private String runTimeCalc(String startTime,String endTime){
         String runtime;
 
-        Log.d("TAG", "runTimeCalc: start=" + startTime);
-        Log.d("TAG", "runTimeCalc: start=" + endTime);
+        //Log.d("TAG", "runTimeCalc: start=" + startTime);
+        //Log.d("TAG", "runTimeCalc: start=" + endTime);
 
         int startHour = hourExtraction(startTime);
         int startMin = minutesExtraction(startTime);
@@ -375,8 +434,8 @@ public class MainActivity extends AppCompatActivity {
         int end = endHour*60 + endMin;
         int runtimeInt;
 
-        Log.d("TAG", "runTimeCalc: start=" + start);
-        Log.d("TAG", "runTimeCalc: end=" + end);
+        //Log.d("TAG", "runTimeCalc: start=" + start);
+        //Log.d("TAG", "runTimeCalc: end=" + end);
 
         if (start <= end){
             runtimeInt = end - start;
@@ -479,6 +538,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * checkBoxの状況を取得しセット
+     */
+    private void setCheckBoxes(){
+        for (int i = 0; i < allStint; i++) {
+            flagCheckBoxes[i] = flagCheckBox[i].isChecked();
+            Log.d("TAG", "setCheckBoxes: flagCheckBoxes[" + i + "]=" + flagCheckBoxes[i]);
+        }
+    }
+
+    /**
      * 00:00の書式から分に変換
      * @return
      */
@@ -499,4 +568,33 @@ public class MainActivity extends AppCompatActivity {
             driverTimeTextView[i].setText(stintData.getRaceData()[i][3]);
         }
     }
+
+
+    /**
+     * FlagがTrueのStintに対してセットした分数に変更。
+     * FlagがFalseの項目に対してはセットした値を考慮した開始時間・終了時間に再セット
+     * @param runMin
+     */
+    private void flagItemSetMin(int runMin){
+        for (int i = 0; i < allStint; i++) {
+            if (flagCheckBoxes[i]){
+                //走行終了時間に走行開始にセットしたい時間を足した時間をセットする
+                stintData.setEndTime(i,calcPlusTime(stintData.getRaceData()[i][1],runMin));
+            }else{
+                //走行終了時間に走行開始にもともとセットされていた走行時間を足した時間をセットする
+                stintData.setEndTime(i,calcPlusTime(stintData.getRaceData()[i][1],runTime[i]));
+            }
+        }
+    }
+
+    /**
+     * 各Stintの走行時間をrunTime[]に格納
+     */
+    private void setRunTimeArray(){
+        for (int i = 0; i < maxStintCount; i++) {
+            runTime[i] = convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1],stintData.getRaceData()[i][2]));
+            Log.d("TAG", "setRunTime: runTime[" + i + "]=" + runTime[i]);
+        }
+    }
+
 }

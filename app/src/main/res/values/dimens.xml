@@ -6,4 +6,5 @@
     <dimen name="driver_textView_width">40dp</dimen>
     <dimen name="btn_height">40dp</dimen>
     <dimen name="chk_box_width">30dp</dimen>
+    <dimen name="btn_width_set">58dp</dimen>
 </resources>

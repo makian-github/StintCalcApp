@@ -102,6 +102,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/check_item_text"
+            />
+        <EditText
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/setTimeEditText"
+            android:text="0"
+            android:textAlignment="viewEnd"
+            android:maxLines="1"
+            android:inputType="number"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/minute"
+            />
+        <Button
+            android:layout_width="@dimen/btn_width_set"
+            android:layout_height="@dimen/btn_height"
+            android:textAllCaps="false"
+            android:text="@string/Set"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/setMinuteBtn"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_height"
+            android:text="@string/all_check_text"
+            android:textAllCaps="false"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/allCheckBtn"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_height"
+            android:text="@string/all_uncheck_text"
+            android:textAllCaps="false"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/allUncheckBtn"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/btn_height"
+            android:text="@string/check_revers_text"
+            android:textAllCaps="false"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/reverseBtn"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="@dimen/chk_box_width"
