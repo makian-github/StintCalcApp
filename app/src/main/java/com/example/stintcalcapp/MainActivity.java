@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean[] flagCheckBoxes;
     private int[] runTime;
 
+    private TimeCalc timeCalc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         stintData = (StintData) this.getApplication();
+        timeCalc = new TimeCalc();
 
         //Maxスティント数
         maxStintCount = stintData.getMaxStintCount();
@@ -192,11 +195,11 @@ public class MainActivity extends AppCompatActivity {
                     perStintTimeCalc();
                     if (stintData.getPerStintTime() != 0) {
                         for (int i = 0; i < stintData.getStintCnt(); i++) {
-                            stintData.setEndTime(i, calcPlusTime(stintData.getRaceData()[i][1], stintData.getPerStintTime()));
+                            stintData.setEndTime(i, timeCalc.calcPlusTime(stintData.getRaceData()[i][1], stintData.getPerStintTime()));
                         }
                     }
 
-                    stintData.getRaceData()[stintData.getStintCnt() - 1][2] = calcPlusTime(stintData.getRaceData()[0][1], raceTime);
+                    stintData.getRaceData()[stintData.getStintCnt() - 1][2] = timeCalc.calcPlusTime(stintData.getRaceData()[0][1], raceTime);
                     Log.d("@@", "onClick: stintData.getRaceData()[0][1]" + stintData.getRaceData()[0][1]);
                     Log.d("@@", "onClick: raceTime" + raceTime);
                     Log.d("@@", "onClick: stintData.getRaceData()[stintData.getStintCnt()-1][2]" + stintData.getRaceData()[stintData.getStintCnt() - 1][2]);
@@ -425,10 +428,10 @@ public class MainActivity extends AppCompatActivity {
         //Log.d("TAG", "runTimeCalc: start=" + startTime);
         //Log.d("TAG", "runTimeCalc: start=" + endTime);
 
-        int startHour = hourExtraction(startTime);
-        int startMin = minutesExtraction(startTime);
-        int endHour = hourExtraction(endTime);
-        int endMin = minutesExtraction(endTime);
+        int startHour = timeCalc.hourExtraction(startTime);
+        int startMin = timeCalc.minutesExtraction(startTime);
+        int endHour = timeCalc.hourExtraction(endTime);
+        int endMin = timeCalc.minutesExtraction(endTime);
 
         int start = startHour*60 + startMin;
         int end = endHour*60 + endMin;
@@ -447,55 +450,6 @@ public class MainActivity extends AppCompatActivity {
         runtime = String.format("%d:%02d",runtimeInt/60,runtimeInt%60);
 
         return runtime;
-    }
-
-    /**
-     * 00:00(time)から時(Hour)を抽出
-     * @param time 00:00
-     * @return hour
-     */
-    private int hourExtraction(String time) {
-        int hour;
-
-        String[] times = time.split(":");
-        hour = Integer.parseInt(times[0]);
-
-        return hour;
-    }
-
-    /**
-     * 00:00(time)から分(minutes)を抽出
-     * @param time 00:00
-     * @return minutes
-     */
-    private int minutesExtraction(String time) {
-        int minutes;
-
-        String[] times = time.split(":");
-        minutes = Integer.parseInt(times[1]);
-
-        return minutes;
-    }
-
-    /**
-     * 引数で渡された時刻(time)に時間(plusTime)を足した時刻を返す
-     * @param time 時刻(00:00)
-     * @param plusTime 足したい時間
-     * @return time + plusTimeの時刻
-     */
-    private String calcPlusTime(String time , int plusTime) {
-
-        int timeHour = hourExtraction(time);
-        int timeMin = minutesExtraction(time);
-
-        //引数で渡された値に1Stint当たりの走行時間を足す
-        int endTime = timeHour * 60 + timeMin + plusTime;
-
-        //00:00の書式でreturn
-        String returnTime = String.format("%d:%02d", endTime / 60, endTime % 60);
-        Log.d("TAG", "calcPlusTime: returnTime = " + returnTime);
-
-        return returnTime;
     }
 
     /**
@@ -521,7 +475,7 @@ public class MainActivity extends AppCompatActivity {
     private void uniformitySet(String startTime,String endTime,int stint){
         try {
             String time = runTimeCalc(startTime,endTime);
-            int time_min = convertTimeToMin(time);
+            int time_min = timeCalc.convertTimeToMin(time);
             int remainingStint = allStint - stint;
             Log.d("TAG", "onClick: remainingStint = " + remainingStint);
             int perStint = Math.round(time_min/remainingStint);
@@ -529,7 +483,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("TAG", "uniformitySet: perStint" + perStint);
 
             for (int i = stint; i < allStint; i++) {
-                stintData.setEndTime(i, calcPlusTime(stintData.getRaceData()[i][1], perStint));
+                stintData.setEndTime(i, timeCalc.calcPlusTime(stintData.getRaceData()[i][1], perStint));
             }
 
         }catch (Exception e){
@@ -545,15 +499,6 @@ public class MainActivity extends AppCompatActivity {
             flagCheckBoxes[i] = flagCheckBox[i].isChecked();
             Log.d("TAG", "setCheckBoxes: flagCheckBoxes[" + i + "]=" + flagCheckBoxes[i]);
         }
-    }
-
-    /**
-     * 00:00の書式から分に変換
-     * @return
-     */
-    private int convertTimeToMin(String time){
-        int minTime = hourExtraction(time)*60 + minutesExtraction(time);
-        return minTime;
     }
 
     /**
@@ -579,10 +524,10 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < allStint; i++) {
             if (flagCheckBoxes[i]){
                 //走行終了時間に走行開始にセットしたい時間を足した時間をセットする
-                stintData.setEndTime(i,calcPlusTime(stintData.getRaceData()[i][1],runMin));
+                stintData.setEndTime(i,timeCalc.calcPlusTime(stintData.getRaceData()[i][1],runMin));
             }else{
                 //走行終了時間に走行開始にもともとセットされていた走行時間を足した時間をセットする
-                stintData.setEndTime(i,calcPlusTime(stintData.getRaceData()[i][1],runTime[i]));
+                stintData.setEndTime(i,timeCalc.calcPlusTime(stintData.getRaceData()[i][1],runTime[i]));
             }
         }
     }
@@ -592,7 +537,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void setRunTimeArray(){
         for (int i = 0; i < maxStintCount; i++) {
-            runTime[i] = convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1],stintData.getRaceData()[i][2]));
+            runTime[i] = timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1],stintData.getRaceData()[i][2]));
             Log.d("TAG", "setRunTime: runTime[" + i + "]=" + runTime[i]);
         }
     }
