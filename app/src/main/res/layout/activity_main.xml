@@ -1007,5 +1007,1565 @@
                 android:layout_gravity="top"
                 android:text="@string/Set" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox15"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="16"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime15"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime15"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime15"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver15"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton15"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox16"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="17"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime16"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime16"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime16"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver16"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton16"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox17"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="18"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime17"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime17"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime17"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver17"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton17"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox18"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="19"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime18"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime18"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime18"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver18"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton18"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox19"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="20"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime19"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime19"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime19"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver19"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton19"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox20"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="21"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime20"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime20"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime20"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver20"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton20"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox21"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="22"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime21"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime21"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime21"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver21"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton21"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox22"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="23"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime22"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime22"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime22"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver22"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton22"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox23"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="24"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime23"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime23"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime23"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver23"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton23"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox24"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="25"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime24"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime24"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime24"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver24"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton24"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox25"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="26"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime25"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime25"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime25"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver25"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton25"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox26"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="27"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime26"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime26"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime26"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver26"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton26"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox27"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="28"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime27"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime27"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime27"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver27"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton27"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox28"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="29"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime28"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime28"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime28"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver28"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton28"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox29"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="30"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime29"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime29"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime29"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver29"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton29"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox30"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="31"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime30"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime30"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime30"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver30"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton30"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox31"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="32"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime31"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime31"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime31"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver31"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton31"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox32"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="33"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime32"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime32"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime32"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver32"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton32"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox33"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="34"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime33"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime33"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime33"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver33"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton33"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox34"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="35"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime34"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime34"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime34"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver34"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton34"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox35"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="36"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime35"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime35"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime35"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver35"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton35"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox36"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="37"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime36"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime36"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime36"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver36"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton36"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox37"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="38"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime37"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime37"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime37"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver37"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton37"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox38"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="39"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime38"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime38"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime38"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver38"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton38"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox39"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="40"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime39"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime39"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime39"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver39"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton39"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox40"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="41"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime40"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime40"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime40"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver40"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton40"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox41"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="42"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime41"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime41"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime41"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver41"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton41"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox42"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="43"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime42"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime42"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime42"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver42"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton42"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox43"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="44"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime43"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime43"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime43"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver43"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton43"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox44"
+                android:layout_width="@dimen/chk_box_width"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="@dimen/stint_textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="45"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/startTime44"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/endTime44"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/runTime44"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver44"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/setButton44"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="@string/Set" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

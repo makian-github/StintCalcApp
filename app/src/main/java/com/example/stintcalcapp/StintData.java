@@ -8,9 +8,9 @@ import static android.content.ContentValues.TAG;
 public class StintData extends Application {
 
     private String driverName = "default";
-    private int maxStintCount = 15;
+    private int maxStintCount = 45;
     private int perStintTime = 0;
-    private int stintCnt = 15;
+    private int stintCnt = 45;
 
     /**
      * [スティント数][データ数]
@@ -18,7 +18,7 @@ public class StintData extends Application {
      * データ1 = スティントの開始の時間
      * データ2 = スティントの終了時間
      */
-    private String raceData[][] = new String[15][4];
+    private String raceData[][] = new String[maxStintCount][4];
 
     @Override
     public void onCreate() {
