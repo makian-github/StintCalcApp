@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -23,6 +24,7 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
     private TextView startTimeText;
     private TextView endTimeText;
     private EditText driverNameText;
+    private Spinner driverSpinner;
     private Button driverSetBtn;
     private int stintNum;
     private int Button;
@@ -42,13 +44,15 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
         startTimeText.setText(stintData.getRaceData()[stintNum][1]);
         endTimeText.setText(stintData.getRaceData()[stintNum][2]);
 
-        driverNameText = findViewById(R.id.driverText);
+        //driverNameText = findViewById(R.id.driverText);
+        driverSpinner = findViewById(R.id.driverSpinner);
         driverSetBtn = findViewById(R.id.driverSetBtn);
 
         driverSetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = driverNameText.getText().toString();
+                //String name = driverNameText.getText().toString();
+                String name = (String)driverSpinner.getSelectedItem();
                 stintData.setDriver(stintNum,name);
             }
         });

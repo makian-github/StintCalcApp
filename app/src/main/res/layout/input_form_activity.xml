@@ -55,13 +55,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <EditText
+        <Spinner
+            android:id="@+id/driverSpinner"
             android:layout_width="250dp"
             android:layout_height="70dp"
             android:textAlignment="center"
             android:textSize="50dp"
-            android:text="@string/def_driver"
-            android:id="@+id/driverText"/>
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:entries="@array/list"
+        android:spinnerMode="dialog" />
 
         <Button
             android:layout_width="150dp"

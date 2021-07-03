@@ -434,6 +434,22 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
+
+            <TextView
+                android:id="@+id/driver0Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="秋間   :"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver0SumTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textAlignment="center" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -486,6 +502,22 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
+
+            <TextView
+                android:id="@+id/driver1Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="豊口   :"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver1SumTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textAlignment="center" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -538,6 +570,21 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
+
+            <TextView
+                android:id="@+id/driver2Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="吉戒   :"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver2SumTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout
@@ -590,6 +637,21 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
+
+            <TextView
+                android:id="@+id/driver3Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="ルーク:"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver3SumTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout
@@ -642,6 +704,21 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
+
+            <TextView
+                android:id="@+id/driver4Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="横田   :"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver4SumTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout
@@ -694,6 +771,21 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
+
+            <TextView
+                android:id="@+id/driver5Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="A　    :"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver5SumTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout
@@ -746,6 +838,22 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
+
+            <TextView
+                android:id="@+id/driver6Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="B　    :"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver6SumTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textAlignment="center" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -798,6 +906,21 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
+
+            <TextView
+                android:id="@+id/driver7Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="C　    :"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/drive7SumTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout

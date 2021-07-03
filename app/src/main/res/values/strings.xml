@@ -30,4 +30,15 @@
     <string name="saved">Saved</string>
     <string name="read_error">Read file error !</string>
     <string name="read_comp">Read Completed !</string>
+
+    <string-array name="list">
+        <item>秋間</item>
+        <item>豊口</item>
+        <item>吉戒</item>
+        <item>ルーク</item>
+        <item>横田</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+    </string-array>
 </resources>
