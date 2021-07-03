@@ -24,4 +24,10 @@
     <string name="all_check_text">All Check</string>
     <string name="all_uncheck_text">All Uncheck</string>
     <string name="check_revers_text">rev Check</string>
+    <string name="save_text">Save</string>
+    <string name="read_text">Read</string>
+    <string name="no_text">"No text !"</string>
+    <string name="saved">Saved</string>
+    <string name="read_error">Read file error !</string>
+    <string name="read_comp">Read Completed !</string>
 </resources>

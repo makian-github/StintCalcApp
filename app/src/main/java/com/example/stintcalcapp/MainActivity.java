@@ -3,6 +3,7 @@ package com.example.stintcalcapp;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,12 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,12 +40,34 @@ public class MainActivity extends AppCompatActivity {
 
     private TimeCalc timeCalc;
 
+    //ファイル出力用
+    private File file;
+    private File startTimeFile;
+    private File endTimeFile;
+    private File runTimeFile;
+    private File driverTimeFile;
+    private TextView statusText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //ファイル出力用のファイルを新規作成
+        Context context = getApplicationContext();
 
+        String otherInfoFileName = "otherInfoFile.csv";
+        String startTimeFileName = "startTimeFile.csv";
+        String endTimeFileName = "endTimeFile.csv";
+        String runTimeFileName = "runTimeFile.csv";
+        String driverTimeFileName = "driverTimeFile.csv";
+
+
+        file = new File(context.getFilesDir(), otherInfoFileName);
+        startTimeFile = new File(context.getFilesDir(), startTimeFileName);
+        endTimeFile = new File(context.getFilesDir(), endTimeFileName);
+        runTimeFile = new File(context.getFilesDir(), runTimeFileName);
+        driverTimeFile = new File(context.getFilesDir(), driverTimeFileName);
 
     }
 
@@ -170,6 +199,9 @@ public class MainActivity extends AppCompatActivity {
         Button allUncheckBtn = findViewById(R.id.allUncheckBtn);
         Button reversCheckBtn = findViewById(R.id.reverseBtn);
 
+        Button saveBtn = findViewById(R.id.saveBtn);
+        Button readBtn = findViewById(R.id.readBtn);
+
         perStintTimeTextView = findViewById(R.id.perStintText);
         allStintTextEditText = findViewById(R.id.allStintEditText);
         raceTimeEditText = findViewById(R.id.raceTimeEditText);
@@ -178,6 +210,8 @@ public class MainActivity extends AppCompatActivity {
         raceTime = Integer.parseInt(raceTimeEditText.getText().toString());
         allStint = Integer.parseInt(allStintTextEditText.getText().toString());
         setRunMin = Integer.parseInt(setMinEditText.getText().toString());
+
+        statusText = findViewById(R.id.statusText);
 
         perStintCalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -412,6 +446,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveFile();
+            }
+        });
+
+        readBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readFile();
+                displayUpdate();
+            }
+        });
+
 
         displayUpdate();
     }
@@ -540,6 +589,128 @@ public class MainActivity extends AppCompatActivity {
             runTime[i] = timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1],stintData.getRaceData()[i][2]));
             Log.d("TAG", "setRunTime: runTime[" + i + "]=" + runTime[i]);
         }
+    }
+
+    // ファイルを保存
+    public void saveFile(String str,int data) {
+        if (data == 0) {
+            // try-with-resources
+            try (FileWriter writer = new FileWriter(startTimeFile)) {
+                writer.write(str);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if(data == 1){
+            // try-with-resources
+            try (FileWriter writer = new FileWriter(endTimeFile)) {
+                writer.write(str);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else if(data == 2){
+            // try-with-resources
+            try (FileWriter writer = new FileWriter(driverTimeFile)) {
+                writer.write(str);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else{
+            Log.d("TAG","ファイル選択エラー");
+        }
+
+    }
+
+    // ファイルを読み出し
+    public String readFile_() {
+        String readText = null;
+
+        // try-with-resources
+        try(
+                BufferedReader br = new BufferedReader(new FileReader(file))
+        ){
+            readText = br.readLine();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return readText;
+    }
+
+    private void saveFile(){
+        String startTimeText = "";
+        String endTimeText = "";
+        String driverTimeText = "";
+
+        for (int i = 0; i < stintData.getMaxStintCount(); i++) {
+            if (i==0){
+                startTimeText = String.valueOf(stintData.getRaceData()[i][1]);
+                endTimeText =String.valueOf(stintData.getRaceData()[i][2]);
+                driverTimeText = String.valueOf(stintData.getRaceData()[i][3]);
+            }else {
+                startTimeText += "," + String.valueOf(stintData.getRaceData()[i][1]);
+                endTimeText += "," + String.valueOf(stintData.getRaceData()[i][2]);
+                driverTimeText += "," + String.valueOf(stintData.getRaceData()[i][3]);
+            }
+        }
+        Log.d("saveBtn", "startTimeText" + startTimeText);
+        Log.d("saveBtn", "endTimeText:" + endTimeText);
+        Log.d("saveBtn", "driverTimeText" + driverTimeText);
+
+        saveFile(startTimeText,0);
+        saveFile(endTimeText,1);
+        saveFile(driverTimeText,2);
+        if(startTimeText.length() == 0 || endTimeText.length()== 0 || driverTimeText.length()== 0){
+            statusText.setText(R.string.no_text);
+        }
+        else{
+            statusText.setText(R.string.saved);
+        }
+    }
+
+    public void readFile(){
+
+        String startTimeReadText[] = new String[stintData.getMaxStintCount()];
+        String endTimeReadText[] = new String[stintData.getMaxStintCount()];
+        String driverTimeReadText[] = new String[stintData.getMaxStintCount()];
+
+        // try-with-resources
+        try(BufferedReader br = new BufferedReader(new FileReader(startTimeFile))){
+            startTimeReadText =  br.readLine().split(",");
+            for (int i = 0; i < stintData.getMaxStintCount(); i++) {
+                stintData.getRaceData()[i][1] = startTimeReadText[i];
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try(BufferedReader br = new BufferedReader(new FileReader(endTimeFile))){
+            endTimeReadText =  br.readLine().split(",");
+            for (int i = 0; i < stintData.getMaxStintCount(); i++) {
+                stintData.getRaceData()[i][2] = endTimeReadText[i];
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try(BufferedReader br = new BufferedReader(new FileReader(driverTimeFile))){
+            driverTimeReadText =  br.readLine().split(",");
+            for (int i = 0; i < stintData.getMaxStintCount(); i++) {
+                stintData.getRaceData()[i][3] = driverTimeReadText[i];
+            }
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        for (int i = 0; i < 15; i++) {
+            Log.d("ReadFile",i + " : " + startTimeReadText[i] +" : "+endTimeReadText[i]+" : "+driverTimeReadText[i]);
+        }
+
+        statusText.setText(R.string.read_comp);
     }
 
 }

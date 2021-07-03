@@ -248,6 +248,23 @@
             android:layout_height="40dp"
             android:layout_gravity="top"
             android:text="@string/Set" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_gravity="top"
+            android:layout_marginLeft="10dp"
+            android:text="@string/save_text" />
+
+        <Button
+            android:id="@+id/readBtn"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_gravity="top"
+            android:layout_marginLeft="10dp"
+            android:text="@string/read_text" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -301,6 +318,15 @@
             android:layout_height="40dp"
             android:layout_gravity="top"
             android:text="@string/Set" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="-"
+            android:textAlignment="center" />
+
     </LinearLayout>
 
     <LinearLayout
