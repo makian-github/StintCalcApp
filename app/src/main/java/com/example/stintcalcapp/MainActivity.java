@@ -447,6 +447,8 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("@@", "onClick: stintData.getRaceData()[stintData.getStintCnt()-1][2]" + stintData.getRaceData()[stintData.getStintCnt() - 1][2]);
                     displayUpdate();
                 }
+                //CSVに書き出し
+                saveFile();
             }
         });
 
@@ -465,6 +467,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                 }
+
+                //CSVに書き出し
+                saveFile();
+
                 displayUpdate();
             }
         });
@@ -486,6 +492,10 @@ public class MainActivity extends AppCompatActivity {
                 setCheckBoxes();
                 setRunTimeArray();
                 flagItemSetMin(setRunMin);
+
+                //CSVに書き出し
+                saveFile();
+
                 displayUpdate();
             }
         });
@@ -1023,9 +1033,6 @@ public class MainActivity extends AppCompatActivity {
             runTimeTextView[i].setText(runTimeCalc(stintData.getRaceData()[i][1],stintData.getRaceData()[i][2]));
             driverTimeTextView[i].setText(stintData.getRaceData()[i][3]);
         }
-
-        //CSVに書き出し
-        saveFile();
 
         //各ドライバーの走行時間の計算・更新
         setRuntimeSum();
