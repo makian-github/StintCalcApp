@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView[] runSumTimeTextView;
 
     private TimeCalc timeCalc;
+
+    private ToggleButton endTimeFixedToggle;
 
     //ファイル出力用
     private File file;
@@ -412,6 +415,8 @@ public class MainActivity extends AppCompatActivity {
         runSumTimeTextView[7]  = findViewById(R.id.driver7SumTime);
         runSumTimeTextView[8]  = findViewById(R.id.driver8SumTime);
 
+        endTimeFixedToggle = findViewById(R.id.endTimeFixed);
+
         perStintCalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -428,7 +433,11 @@ public class MainActivity extends AppCompatActivity {
                     perStintTimeCalc();
                     if (stintData.getPerStintTime() != 0) {
                         for (int i = 0; i < stintData.getStintCnt(); i++) {
-                            stintData.setEndTime(i, timeCalc.calcPlusTime(stintData.getRaceData()[i][1], stintData.getPerStintTime()));
+                            if (i==stintData.getStintCnt()-1 && endTimeFixedToggle.isChecked()){
+                                stintData.setEndTime(i, timeCalc.calcPlusTime(stintData.getRaceData()[0][1], raceTime));
+                            }else {
+                                stintData.setEndTime(i, timeCalc.calcPlusTime(stintData.getRaceData()[i][1], stintData.getPerStintTime()));
+                            }
                         }
                     }
 
@@ -909,6 +918,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //描画更新時にトグルスイッチが終了時間を固定にしている場合
+        // 最終Stintの完了時間をセットする
+        if (endTimeFixedToggle.isChecked() && allStint>0){
+            stintData.setEndTime(allStint-1, timeCalc.calcPlusTime(stintData.getRaceData()[0][1], raceTime));
+        }
+
         displayUpdate();
     }
 
@@ -1028,8 +1043,16 @@ public class MainActivity extends AppCompatActivity {
                 //走行終了時間に走行開始にセットしたい時間を足した時間をセットする
                 stintData.setEndTime(i,timeCalc.calcPlusTime(stintData.getRaceData()[i][1],runMin));
             }else{
-                //走行終了時間に走行開始にもともとセットされていた走行時間を足した時間をセットする
-                stintData.setEndTime(i,timeCalc.calcPlusTime(stintData.getRaceData()[i][1],runTime[i]));
+                if (i==allStint-1 && endTimeFixedToggle.isChecked()){
+                    Log.d("TAG", "flagItemSetMin:@@@@@@@ " + raceTime);
+                    //走行終了時間に走行開始にもともとセットされていた走行時間を足した時間をセットする
+                    stintData.setEndTime(i,timeCalc.calcPlusTime(stintData.getRaceData()[0][1],raceTime));
+
+                }else{
+                    //走行終了時間に走行開始にもともとセットされていた走行時間を足した時間をセットする
+                    Log.d("TAG", "flagItemSetMin:FALSE");
+                    stintData.setEndTime(i,timeCalc.calcPlusTime(stintData.getRaceData()[i][1],runTime[i]));
+                }
             }
         }
     }
@@ -1070,7 +1093,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         for (int i = 0; i < runTime.length; i++) {
-            runSumTimeTextView[i].setText(timeCalc.timeFormatExtraction(runTime[i]));
+            //runSumTimeTextView[i].setText(timeCalc.timeFormatExtraction(runTime[i]));
+            runSumTimeTextView[i].setText(runTime[i] + "min");
         }
     }
 
