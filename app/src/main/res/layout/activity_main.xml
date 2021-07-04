@@ -777,7 +777,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="A　    :"
+                android:text="坪井   :"
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver5SumTime"
@@ -844,7 +844,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="B　    :"
+                android:text="新田   :"
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver6SumTime"
@@ -912,10 +912,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="C　    :"
+                android:text="X　    :"
                 android:textAlignment="center" />
             <TextView
-                android:id="@+id/drive7SumTime"
+                android:id="@+id/driver7SumTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -973,6 +973,21 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
+
+            <TextView
+                android:id="@+id/driver8Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="未設定:"
+                android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver8SumTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00:00"
+                android:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout

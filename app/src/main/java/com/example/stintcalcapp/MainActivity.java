@@ -1,5 +1,6 @@
 package com.example.stintcalcapp;
 
+import androidx.annotation.LongDef;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private int setRunMin;
     private boolean[] flagCheckBoxes;
     private int[] runTime;
+    private TextView[] runSumTimeTextView;
 
     private TimeCalc timeCalc;
 
@@ -92,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
         runTime = new int[maxStintCount];
 
         flagCheckBoxes = new boolean[maxStintCount];
+
+        runSumTimeTextView = new TextView[stintData.getDriverCnt()];
 
         //idの紐づけ
         startTimeTextView[0] = findViewById(R.id.startTime0);
@@ -397,6 +401,16 @@ public class MainActivity extends AppCompatActivity {
         setRunMin = Integer.parseInt(setMinEditText.getText().toString());
 
         statusText = findViewById(R.id.statusText);
+
+        runSumTimeTextView[0]  = findViewById(R.id.driver0SumTime);
+        runSumTimeTextView[1]  = findViewById(R.id.driver1SumTime);
+        runSumTimeTextView[2]  = findViewById(R.id.driver2SumTime);
+        runSumTimeTextView[3]  = findViewById(R.id.driver3SumTime);
+        runSumTimeTextView[4]  = findViewById(R.id.driver4SumTime);
+        runSumTimeTextView[5]  = findViewById(R.id.driver5SumTime);
+        runSumTimeTextView[6]  = findViewById(R.id.driver6SumTime);
+        runSumTimeTextView[7]  = findViewById(R.id.driver7SumTime);
+        runSumTimeTextView[8]  = findViewById(R.id.driver8SumTime);
 
         perStintCalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -795,6 +809,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplication(), InputForm.class);
+                intent.putExtra("Stint", 34);//第一引数key、第二引数渡したい値
+                startActivity(intent);
+            }
+        });
+        setButton35.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), InputForm.class);
                 intent.putExtra("Stint", 35);//第一引数key、第二引数渡したい値
                 startActivity(intent);
             }
@@ -886,7 +908,6 @@ public class MainActivity extends AppCompatActivity {
                 displayUpdate();
             }
         });
-
 
         displayUpdate();
     }
@@ -987,6 +1008,12 @@ public class MainActivity extends AppCompatActivity {
             runTimeTextView[i].setText(runTimeCalc(stintData.getRaceData()[i][1],stintData.getRaceData()[i][2]));
             driverTimeTextView[i].setText(stintData.getRaceData()[i][3]);
         }
+
+        //CSVに書き出し
+        saveFile();
+
+        //各ドライバーの走行時間の計算・更新
+        setRuntimeSum();
     }
 
 
@@ -1016,6 +1043,37 @@ public class MainActivity extends AppCompatActivity {
             Log.d("TAG", "setRunTime: runTime[" + i + "]=" + runTime[i]);
         }
     }
+
+    private void setRuntimeSum(){
+        int[] runTime = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+        for (int i = 0; i < maxStintCount; i++) {
+            if (stintData.getDriverName(i).equals("秋間")) {
+                runTime[0] += timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1], stintData.getRaceData()[i][2]));
+            } else if (stintData.getDriverName(i).equals("豊口")) {
+                runTime[1] += timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1], stintData.getRaceData()[i][2]));
+            } else if (stintData.getDriverName(i).equals("吉戒")) {
+                runTime[2] += timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1], stintData.getRaceData()[i][2]));
+            } else if (stintData.getDriverName(i).equals("ルーク")) {
+                runTime[3] += timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1], stintData.getRaceData()[i][2]));
+            } else if (stintData.getDriverName(i).equals("横田")) {
+                runTime[4] += timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1], stintData.getRaceData()[i][2]));
+            } else if (stintData.getDriverName(i).equals("坪井")) {
+                runTime[5] += timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1], stintData.getRaceData()[i][2]));
+            } else if (stintData.getDriverName(i).equals("新田")) {
+                runTime[6] += timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1], stintData.getRaceData()[i][2]));
+            } else if (stintData.getDriverName(i).equals("X")) {
+                runTime[7] += timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1], stintData.getRaceData()[i][2]));
+            } else {
+                runTime[8] += timeCalc.convertTimeToMin(runTimeCalc(stintData.getRaceData()[i][1], stintData.getRaceData()[i][2]));
+            }
+        }
+
+        for (int i = 0; i < runTime.length; i++) {
+            runSumTimeTextView[i].setText(timeCalc.timeFormatExtraction(runTime[i]));
+        }
+    }
+
 
     // ファイルを保存
     public void saveFile(String str,int data) {

@@ -60,4 +60,19 @@ public class TimeCalc {
 
         return returnTime;
     }
+
+    /**
+     * 引数で渡された時間(分)を00:00のformatに変換
+     * @param min 時間(分)
+     * @return 引数で渡された値を00:00のformatに変換した時間
+     */
+    public String timeFormatExtraction(int min) {
+        Log.d("TAG", "timeFormatExtraction: " + min);
+        int hour = min/60;
+        int minute = min%60;
+        String time = String.format("%02d:%02d",hour,minute);
+        return time;
+    }
+
+
 }

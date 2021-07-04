@@ -11,6 +11,7 @@ public class StintData extends Application {
     private int maxStintCount = 45;
     private int perStintTime = 0;
     private int stintCnt = 45;
+    private int driverCnt = 9;//
 
     /**
      * [スティント数][データ数]
@@ -38,8 +39,8 @@ public class StintData extends Application {
         }
     }
 
-    public String getDriverName() {
-        return driverName;
+    public String getDriverName(int stint) {
+        return this.raceData[stint][3];
     }
 
     public void setDriverName(String driverName) {
@@ -92,6 +93,10 @@ public class StintData extends Application {
 
     public void setStintCnt(int stintCnt) {
         this.stintCnt = stintCnt;
+    }
+
+    public int getDriverCnt() {
+        return driverCnt;
     }
 
     /**

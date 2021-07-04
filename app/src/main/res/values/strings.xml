@@ -32,13 +32,14 @@
     <string name="read_comp">Read Completed !</string>
 
     <string-array name="list">
+        <item>-</item>
         <item>秋間</item>
         <item>豊口</item>
         <item>吉戒</item>
         <item>ルーク</item>
         <item>横田</item>
-        <item>A</item>
-        <item>B</item>
-        <item>C</item>
+        <item>坪井</item>
+        <item>新田</item>
+        <item>X</item>
     </string-array>
 </resources>
