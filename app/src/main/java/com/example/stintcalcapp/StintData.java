@@ -11,13 +11,15 @@ public class StintData extends Application {
     private int maxStintCount = 45;
     private int perStintTime = 0;
     private int stintCnt = 45;
-    private int driverCnt = 9;//
+    private int driverCnt = 9;
+    private int pauseCnt = 0;
 
     /**
      * [スティント数][データ数]
      * データ0 = ドライバー情報
      * データ1 = スティントの開始の時間
      * データ2 = スティントの終了時間
+     * データ3 = ドライバー名
      */
     private String raceData[][] = new String[maxStintCount][4];
 
@@ -47,6 +49,14 @@ public class StintData extends Application {
         this.driverName = driverName;
     }
 
+    /**
+     * [スティント数][データ数]
+     * データ0 = ドライバー情報
+     * データ1 = スティントの開始の時間
+     * データ2 = スティントの終了時間
+     * データ3 = ドライバー名
+     * @return
+     */
     public String[][] getRaceData() {
         return raceData;
     }
@@ -61,7 +71,7 @@ public class StintData extends Application {
 
     public void setEndTime(int stint, String endTime) {
         this.raceData[stint][2] = endTime;
-        if (stint < maxStintCount-1 && stint != stintCnt-1) {
+        if (stint < maxStintCount+pauseCnt-1 && stint != stintCnt+pauseCnt-1) {
             //次のStintの開始時間に時間をセット
             setStartTime(stint + 1, endTime);
         }
@@ -97,6 +107,14 @@ public class StintData extends Application {
 
     public int getDriverCnt() {
         return driverCnt;
+    }
+
+    public int getPauseCnt() {
+        return pauseCnt;
+    }
+
+    public void setPauseCnt(int pauseCnt) {
+        this.pauseCnt = pauseCnt;
     }
 
     /**

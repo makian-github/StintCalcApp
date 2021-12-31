@@ -33,6 +33,7 @@
 
     <string-array name="list">
         <item>-</item>
+        <item>中断</item>
         <item>秋間</item>
         <item>豊口</item>
         <item>吉戒</item>
