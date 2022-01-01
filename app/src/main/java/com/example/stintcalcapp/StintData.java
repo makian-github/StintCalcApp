@@ -45,8 +45,13 @@ public class StintData extends Application {
         return this.raceData[stint][3];
     }
 
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
+    /**
+     * 受け取ったStintに受け取ったドライバー名を設定
+     * @param stint　設定したいStint
+     * @param driverName　設定したいドライバー名
+     */
+    public void setDriverName(int stint,String driverName) {
+        this.raceData[stint][3] = driverName;
     }
 
     /**

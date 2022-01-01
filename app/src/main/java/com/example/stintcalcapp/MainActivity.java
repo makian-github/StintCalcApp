@@ -414,6 +414,8 @@ public class MainActivity extends AppCompatActivity {
         Button saveBtn = findViewById(R.id.saveBtn);
         Button readBtn = findViewById(R.id.readBtn);
 
+        Button driverSetBtn = findViewById(R.id.driverBtn);
+
         //ドライバー一括設定ボタン
         Button akimaBtn = findViewById(R.id.setDriverAkima);
         Button toyoguchiBtn = findViewById(R.id.setDriverToyoguchi);
@@ -451,10 +453,22 @@ public class MainActivity extends AppCompatActivity {
 
         endTimeFixedToggle = findViewById(R.id.endTimeFixed);
 
+        allStintTextEditText.setText("");
+        raceTimeEditText.setText("");
+        setMinEditText.setText("");
+
         perStintCalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 perStintTimeCalc();
+            }
+        });
+
+        perStintCalcBtn.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                displayUpdate();
+                return false;
             }
         });
 
@@ -522,7 +536,11 @@ public class MainActivity extends AppCompatActivity {
         checkItemSetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setRunMin = Integer.parseInt(setMinEditText.getText().toString());
+                try {
+                    setRunMin = Integer.parseInt(setMinEditText.getText().toString());
+                }catch (Exception e){
+                    Log.d("Exception", "onClick(checkItemSetBtn): " + e);
+                }
                 setCheckBoxes();
                 setRunTimeArray();
                 flagItemSetMin(setRunMin);
@@ -563,6 +581,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        driverSetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                driverSet();
+            }
+        });
+
 
         akimaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1133,6 +1159,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * チェックボックスがついている最後のチェックボックスを返す
+     * @return チェックのついている最後のチェックボックスの番号
+     */
+    private int lastCheckBox(){
+        int lastChkBox = 0;
+        for (int i = allStintCnt()-1; i >= 0; i--) {
+            if (flagCheckBox[i].isChecked()){
+                lastChkBox = i;
+                break;
+            }
+        }
+        return lastChkBox;
+    }
+
+    /**
      * 表示を更新
      * StintDataから値を取得
      */
@@ -1312,10 +1353,10 @@ public class MainActivity extends AppCompatActivity {
         saveFile(endTimeText,1);
         saveFile(driverTimeText,2);
         if(startTimeText.length() == 0 || endTimeText.length()== 0 || driverTimeText.length()== 0){
-            statusText.setText(R.string.no_text);
+            //statusText.setText(R.string.no_text);
         }
         else{
-            statusText.setText(R.string.saved);
+            //statusText.setText(R.string.saved);
         }
     }
 
@@ -1361,7 +1402,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("ReadFile",i + " : " + startTimeReadText[i] +" : "+endTimeReadText[i]+" : "+driverTimeReadText[i]);
         }
 
-        statusText.setText(R.string.read_comp);
+        //statusText.setText(R.string.read_comp);
     }
 
     private void setDriver(int driverID){
@@ -1397,7 +1438,15 @@ public class MainActivity extends AppCompatActivity {
                         stintData.setDriver(i,"-");
                         break;
                     case ID_PAUSE:
-                        stintData.setDriver(i,"中断");
+                        if (!stintData.getDriverName(i).equals("中断")){
+                            //ドライバーを繰り下げする
+                            shiftList(i);
+                            stintData.setDriver(i,"中断");
+                            //中断後のStintを均等割りする
+                            String uniformityStartTime = stintData.getRaceData()[i+1][1];
+                            String uniformityEndTime = timeCalc.calcPlusTime(stintData.getRaceData()[0][1],raceTime);
+                            uniformitySet(uniformityStartTime,uniformityEndTime,i+1);
+                        }
                         break;
                 }
 
@@ -1411,7 +1460,8 @@ public class MainActivity extends AppCompatActivity {
         //中断の回数をallStintに追加することで帳尻を合わせる
         for (int i = 0; i < allStint; i++) {
             if (stintData.getDriverName(i).equals("中断")){
-                pauseCnt++;
+                //中断後は中断前のドライバーが乗るため、中断回数＊2を追加
+                pauseCnt = pauseCnt + 2;
                 Log.d("allStintCnt","pauseCnt = " + pauseCnt);
             }
         }
@@ -1421,6 +1471,11 @@ public class MainActivity extends AppCompatActivity {
         return allStintCnt;
     }
 
+    /**
+     * 規則上最長の走行時間を計算して返す
+     * @param driverCnt 参加ドライバー人数
+     * @return 均等割り＊COEF(120%ルール)の値を返す
+     */
     private int maxRunTime(int driverCnt){
         Log.d("maxRunTime","raceTime = " + raceTime + ",COEF = " + COEF + ",driverCnt = " + driverCnt);
         double maxTimeD = raceTime/driverCnt*COEF;
@@ -1429,5 +1484,54 @@ public class MainActivity extends AppCompatActivity {
         Log.d("maxRunTime","maxTimeI(int) = " + maxTimeI);
         return maxTimeI;
     }
+
+
+    /**
+     * 引数で取得した位置から先のドライバーをずらす
+     * @param listNum ずらす開始位置
+     */
+    private void shiftList(int listNum){
+        for (int i = allStintCnt()+1; i > listNum; i--) {
+            stintData.setDriverName(i,stintData.getDriverName(i-2));
+        }
+
+    }
+
+    /**
+     * チェックがついているものを取得して、チェックボックスがついていない項目に繰り返しでドライバー名をセットする
+     */
+    private void driverSet(){
+        Log.d("driverSet[IN]","driverSet[IN]");
+        setCheckBoxes();
+        String[] driver = new String[allStintCnt()];
+        int repeatStint = 0;
+        for (int i = 0; i < allStintCnt(); i++) {
+            if (flagCheckBoxes[i]){
+                driver[repeatStint]=stintData.getDriverName(i);
+                Log.d("driverSet","driver[" + repeatStint + "] = " + stintData.getDriverName(i));
+                repeatStint++;
+            }
+        }
+
+        int repeatStintj = 0;
+        //最後のチェックボックスから先を繰り返しでセットする
+        //配列の関係でStint数から1引いた値で処理を行う
+        int cnt = allStintCnt()-1;
+        for (int i = lastCheckBox(); i < cnt; i++) {
+            Log.d("driverSet[IN]","driverSet() int i = " + i);
+            if (repeatStintj >= repeatStint) {
+                repeatStintj = 0;
+            }
+            Log.d("driverSet[IN]","driver[" + repeatStintj + "]  = " + driver[repeatStintj]);
+            stintData.setDriver(i + 1, driver[repeatStintj]);
+            repeatStintj++;
+        }
+        for (int i = 0; i < cnt; i++) {
+            Log.d("driverSet","stintData.getDriver(" + i + ") = " + stintData.getDriverName(i));
+        }
+        displayUpdate();
+    }
+
+
 
 }

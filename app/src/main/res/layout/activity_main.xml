@@ -97,7 +97,8 @@
                 android:layout_height="@dimen/btn_height"
                 android:layout_marginLeft="10dp"
                 android:text="@string/refresh"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:visibility="invisible"/>
         </LinearLayout>
 
         <LinearLayout
@@ -327,8 +328,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="-"
-                android:textAlignment="center" />
+                android:text=" "
+                android:textAlignment="textStart" />
+
+            <Button
+                android:id="@+id/driverBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="Driver Set"
+                android:textAllCaps="false" />
 
         </LinearLayout>
 
@@ -461,7 +470,7 @@
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver0SumTime"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
@@ -536,7 +545,7 @@
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver1SumTime"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
@@ -611,7 +620,7 @@
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver2SumTime"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
@@ -685,7 +694,7 @@
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver3SumTime"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
@@ -759,7 +768,7 @@
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver4SumTime"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
@@ -833,7 +842,7 @@
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver5SumTime"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
@@ -907,7 +916,7 @@
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver6SumTime"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
@@ -982,7 +991,7 @@
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver7SumTime"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
@@ -1126,11 +1135,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="中断　:"
+                android:text="中断   :"
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/driver9SumTime"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
@@ -1199,14 +1208,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="上限　:"
+                android:text="上限   :"
                 android:textAlignment="center" />
             <TextView
                 android:id="@+id/maxRunTimeTextView"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
+                android:textColor="@color/red"
                 android:textAlignment="center" />
         </LinearLayout>
 
