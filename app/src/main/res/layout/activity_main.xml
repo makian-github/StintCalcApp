@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:maxLines="1"
-                android:text="0"
+                android:text=""
                 android:textAlignment="viewEnd" />
 
             <TextView
@@ -42,7 +42,7 @@
                 android:layout_marginLeft="10dp"
                 android:inputType="number"
                 android:maxLines="1"
-                android:text="0"
+                android:text=""
                 android:textAlignment="viewEnd" />
 
             <TextView
@@ -117,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:maxLines="1"
-                android:text="0"
+                android:text=""
                 android:textAlignment="viewEnd" />
 
             <TextView
