@@ -33,7 +33,7 @@
     <string name="read_error">Read file error !</string>
     <string name="read_comp">Read Completed !</string>
 
-    <string-array name="list">
+    <string-array name="driverList">
         <item>-</item>
         <item>中断</item>
         <item>秋間</item>

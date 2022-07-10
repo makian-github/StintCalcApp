@@ -64,7 +64,7 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:entries="@array/list"
+            android:entries="@array/driverList"
         android:spinnerMode="dialog" />
 
         <Button
@@ -72,6 +72,7 @@
             android:layout_height="50dp"
             android:text="@string/driverBtn"
             android:textAllCaps="false"
+            android:visibility="gone"
             android:id="@+id/driverSetBtn"/>
 
     </LinearLayout>
@@ -98,6 +99,7 @@
             android:layout_height="50dp"
             android:text="@string/KartNoText"
             android:textAllCaps="false"
+            android:visibility="gone"
             android:id="@+id/kartNoSetBtn"/>
 
     </LinearLayout>

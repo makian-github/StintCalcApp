@@ -14,6 +14,7 @@ public class StintData extends Application {
     private int driverCnt = 9;
     private int pauseCnt = 0;
     private int kartNo = 0;
+    private String driverNames[];
 
     /**
      * [スティント数][データ数]
@@ -27,6 +28,8 @@ public class StintData extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        driverNames = getResources().getStringArray(R.array.driverList);
 
         for (int i = 0; i < raceData.length; i++) {
             raceData[i][0] = "0";
@@ -134,6 +137,10 @@ public class StintData extends Application {
         return kartNo;
     }
 
+    public int getDriverNo(int stint){
+        return getDriverListNo(this.raceData[stint][3]);
+    }
+
     /**
      * Stint数よりも先のデータを初期化
      */
@@ -145,5 +152,25 @@ public class StintData extends Application {
             raceData[i][3] = "-";
             raceData[i][4] = "0";
         }
+    }
+
+    /**
+     * 引数で取得したドライバー名がList上の何番目なのかを返す
+     * @param name ドライバー名
+     * @return List(R.array.kartNoList)の何番目
+     */
+    private int getDriverListNo(String name){
+        Log.v(TAG,"getDriverListNo name = " + name);
+        int driverNo=0;
+        Log.v(TAG,"getDriverListNo driverNames.length = " + driverNames.length);
+        for (int i = 0; i < driverNames.length; i++) {
+            Log.v(TAG,"getDriverListNo driverNames[i] = " + driverNames[i]);
+
+            if (name.equals(driverNames[i])){
+                driverNo = i;
+            }
+        }
+        Log.v(TAG,"getDriverListNo driverNo = " + driverNo);
+        return driverNo;
     }
 }

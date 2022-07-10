@@ -3,6 +3,7 @@ package com.example.stintcalcapp;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -53,7 +54,8 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
         kartNoSpinner = findViewById(R.id.kartNoSpinner);
         kartNoSetBtn = findViewById(R.id.kartNoSetBtn);
 
-        //driverSpinner.setSelection(stintData.getDriverName(stintNum));
+        //この画面を表示した際に、設定された値を取得して表示する
+        driverSpinner.setSelection(stintData.getDriverNo(stintNum));
         kartNoSpinner.setSelection(stintData.getKartNo(stintNum));
 
 
@@ -114,6 +116,18 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
         Button = 1;
     }
 
+    /**
+     * バックキーが押された際にプルダウンメニューから選択した値を設定する処理を追加
+     * @param keyCode
+     * @param event
+     * @return
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+        stintData.setDriver(stintNum,(String)driverSpinner.getSelectedItem());
+        stintData.setKartNo(stintNum,(String)kartNoSpinner.getSelectedItem());
+        return super.onKeyDown(keyCode,event);
+    }
 
 }
 
