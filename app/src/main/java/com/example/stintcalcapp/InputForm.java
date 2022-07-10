@@ -3,10 +3,12 @@ package com.example.stintcalcapp;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -31,32 +33,49 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
     private int stintNum;
     private int Button;
     private Spinner kartNoSpinner;
+    private LinearLayout endTimeSetLayout;
+    private LinearLayout driverSetLayout;
+    private LinearLayout kartNoSetLayout;
+    private static int START_TIME_NUM = 999;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.input_form_activity);
 
-        Intent intent = getIntent();
-        stintNum = intent.getIntExtra("Stint",0);//設定したkeyで取り出す
+        endTimeSetLayout = findViewById(R.id.endTimeSetLayout);
+        driverSetLayout = findViewById(R.id.driverSetLayout);
+        kartNoSetLayout = findViewById(R.id.kartNoSetLayout);
 
-        stintData = (StintData) this.getApplication();
-        startTimeText = findViewById(R.id.startTimeText);
-        endTimeText = findViewById(R.id.endTimeText);
-
-        startTimeText.setText(stintData.getRaceData()[stintNum][1]);
-        endTimeText.setText(stintData.getRaceData()[stintNum][2]);
-
-        //driverNameText = findViewById(R.id.driverText);
         driverSpinner = findViewById(R.id.driverSpinner);
         driverSetBtn = findViewById(R.id.driverSetBtn);
 
         kartNoSpinner = findViewById(R.id.kartNoSpinner);
         kartNoSetBtn = findViewById(R.id.kartNoSetBtn);
 
-        //この画面を表示した際に、設定された値を取得して表示する
-        driverSpinner.setSelection(stintData.getDriverNo(stintNum));
-        kartNoSpinner.setSelection(stintData.getKartNo(stintNum));
+        Intent intent = getIntent();
+        stintNum = intent.getIntExtra("Stint",0);//設定したkeyで取り出す
+
+        //if (stintNum == START_TIME_NUM){
+
+        stintData = (StintData) this.getApplication();
+        startTimeText = findViewById(R.id.startTimeText);
+        endTimeText = findViewById(R.id.endTimeText);
+
+
+        if (stintNum == START_TIME_NUM){
+            endTimeSetLayout.setVisibility(View.GONE);
+            driverSetLayout.setVisibility(View.GONE);
+            kartNoSetLayout.setVisibility(View.GONE);
+            startTimeText.setText(stintData.getRaceData()[0][1]);
+        }else{
+            startTimeText.setText(stintData.getRaceData()[stintNum][1]);
+            endTimeText.setText(stintData.getRaceData()[stintNum][2]);
+
+            //この画面を表示した際に、設定された値を取得して表示する
+            driverSpinner.setSelection(stintData.getDriverNo(stintNum));
+            kartNoSpinner.setSelection(stintData.getKartNo(stintNum));
+        }
 
 
         driverSetBtn.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +103,11 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
         if (Button == 0){
             startTimeText.setText( str );
             stintData.setStartTime(stintNum,str);
+        }else if(Button == 2){
+            //TODO
+            //スタート時間をセット
+            //上記値をもとに他の時間をずらす処理を考える
+            Log.v("TAG","InputForm onTimeSet raceStartTimeSet");
         }else{
             endTimeText.setText( str );
             stintData.setEndTime(stintNum,str);
@@ -92,7 +116,15 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
     }
 
     public void showTimePickerDialog(View v) {
-        String[] times = stintData.getRaceData()[stintNum][1].toString().split(":");
+        String[] times;
+        if(stintNum == START_TIME_NUM){
+            times = stintData.getRaceData()[0][1].toString().split(":");
+            Button = 2;
+        }else{
+            times = stintData.getRaceData()[stintNum][1].toString().split(":");
+            Button = 0;
+        }
+
         int hour = Integer.parseInt(times[0]);
         int minute = Integer.parseInt(times[1]);
 
@@ -100,7 +132,6 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
 
         DialogFragment newFragment = new TimePick();
         newFragment.show(getSupportFragmentManager(), startTime);
-        Button = 0;
 
     }
 

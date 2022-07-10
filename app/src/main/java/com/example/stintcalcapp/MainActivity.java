@@ -185,6 +185,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button driverSetBtn = findViewById(R.id.driverBtn);
 
+        Button setRaceStartTimeBtn = findViewById(R.id.setRaceStartTimeBtn);
+
         //ドライバー一括設定ボタン
         Button akimaBtn = findViewById(R.id.setDriverAkima);
         Button toyoguchiBtn = findViewById(R.id.setDriverToyoguchi);
@@ -329,6 +331,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        setRaceStartTimeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), InputForm.class);
+                intent.putExtra("Stint", 999);//第一引数key、第二引数渡したい値
+                startActivity(intent);
+            }
+        });
 
         akimaBtn.setOnClickListener(new View.OnClickListener() {
             @Override

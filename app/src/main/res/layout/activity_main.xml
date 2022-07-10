@@ -354,11 +354,11 @@
                 android:textAlignment="textStart" />
 
             <Button
-                android:id="@+id/driverBtn"
+                android:id="@+id/setRaceStartTimeBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="top"
-                android:text="Driver Set"
+                android:text="@string/startRaceBtn"
                 android:textAllCaps="false" />
 
         </LinearLayout>
@@ -1314,6 +1314,14 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
+
+            <Button
+                android:id="@+id/driverBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:text="Driver Set"
+                android:textAllCaps="false" />
         </LinearLayout>
 
         <LinearLayout

@@ -31,7 +31,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/endTimeSetLayout">
 
         <TextView
             android:layout_width="250dp"
@@ -53,7 +54,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/driverSetLayout">
 
         <Spinner
             android:id="@+id/driverSpinner"
@@ -80,7 +82,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/kartNoSetLayout">
 
         <Spinner
             android:id="@+id/kartNoSpinner"

@@ -15,6 +15,7 @@
     <string name="KartNoText">Kart No.</string>
     <string name="def_driver">-</string>
     <string name="driverBtn">DriverSet</string>
+    <string name="startRaceBtn">StartTime</string>
     <string name="KartNoBtn">KartNoSet</string>
     <string name="perStintTxt">1Stint＝</string>
     <string name="minute">min</string>
