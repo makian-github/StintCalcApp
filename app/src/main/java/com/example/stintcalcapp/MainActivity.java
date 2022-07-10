@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView[] endTimeTextView;
     private TextView[] runTimeTextView;
     private TextView[] driverTimeTextView;
+    private TextView[] kartNoTextView;
     private TextView perStintTimeTextView;
     private EditText allStintTextEditText;
     private EditText raceTimeEditText;
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         endTimeTextView = new TextView[maxStintCount];
         runTimeTextView = new TextView[maxStintCount];
         driverTimeTextView = new TextView[maxStintCount];
+        kartNoTextView =  new TextView[maxStintCount];
         flagCheckBox = new CheckBox[maxStintCount];
 
         //各Stintの走行時間の定義
@@ -921,6 +923,7 @@ public class MainActivity extends AppCompatActivity {
             endTimeTextView[i].setText(stintData.getRaceData()[i][2]);
             runTimeTextView[i].setText(runTimeCalc(stintData.getRaceData()[i][1],stintData.getRaceData()[i][2]));
             driverTimeTextView[i].setText(stintData.getRaceData()[i][3]);
+            kartNoTextView[i].setText(stintData.getRaceData()[i][4]);
 
             if (stintData.getRaceData()[i][3].equals("中断")){
                 driverTimeTextView[i].setTextColor(Color.RED);
@@ -1458,6 +1461,52 @@ public class MainActivity extends AppCompatActivity {
         driverTimeTextView[42] = findViewById(R.id.driver42);
         driverTimeTextView[43] = findViewById(R.id.driver43);
         driverTimeTextView[44] = findViewById(R.id.driver44);
+
+        kartNoTextView[0] = findViewById(R.id.kartNo0);
+        kartNoTextView[1] = findViewById(R.id.kartNo1);
+        kartNoTextView[2] = findViewById(R.id.kartNo2);
+        kartNoTextView[3] = findViewById(R.id.kartNo3);
+        kartNoTextView[4] = findViewById(R.id.kartNo4);
+        kartNoTextView[5] = findViewById(R.id.kartNo5);
+        kartNoTextView[6] = findViewById(R.id.kartNo6);
+        kartNoTextView[7] = findViewById(R.id.kartNo7);
+        kartNoTextView[8] = findViewById(R.id.kartNo8);
+        kartNoTextView[9] = findViewById(R.id.kartNo9);
+        kartNoTextView[10] = findViewById(R.id.kartNo10);
+        kartNoTextView[11] = findViewById(R.id.kartNo11);
+        kartNoTextView[12] = findViewById(R.id.kartNo12);
+        kartNoTextView[13] = findViewById(R.id.kartNo13);
+        kartNoTextView[14] = findViewById(R.id.kartNo14);
+        kartNoTextView[15] = findViewById(R.id.kartNo15);
+        kartNoTextView[16] = findViewById(R.id.kartNo16);
+        kartNoTextView[17] = findViewById(R.id.kartNo17);
+        kartNoTextView[18] = findViewById(R.id.kartNo18);
+        kartNoTextView[19] = findViewById(R.id.kartNo19);
+        kartNoTextView[20] = findViewById(R.id.kartNo20);
+        kartNoTextView[21] = findViewById(R.id.kartNo21);
+        kartNoTextView[22] = findViewById(R.id.kartNo22);
+        kartNoTextView[23] = findViewById(R.id.kartNo23);
+        kartNoTextView[24] = findViewById(R.id.kartNo24);
+        kartNoTextView[25] = findViewById(R.id.kartNo25);
+        kartNoTextView[26] = findViewById(R.id.kartNo26);
+        kartNoTextView[27] = findViewById(R.id.kartNo27);
+        kartNoTextView[28] = findViewById(R.id.kartNo28);
+        kartNoTextView[29] = findViewById(R.id.kartNo29);
+        kartNoTextView[30] = findViewById(R.id.kartNo30);
+        kartNoTextView[31] = findViewById(R.id.kartNo31);
+        kartNoTextView[32] = findViewById(R.id.kartNo32);
+        kartNoTextView[33] = findViewById(R.id.kartNo33);
+        kartNoTextView[34] = findViewById(R.id.kartNo34);
+        kartNoTextView[35] = findViewById(R.id.kartNo35);
+        kartNoTextView[36] = findViewById(R.id.kartNo36);
+        kartNoTextView[37] = findViewById(R.id.kartNo37);
+        kartNoTextView[38] = findViewById(R.id.kartNo38);
+        kartNoTextView[39] = findViewById(R.id.kartNo39);
+        kartNoTextView[40] = findViewById(R.id.kartNo40);
+        kartNoTextView[41] = findViewById(R.id.kartNo41);
+        kartNoTextView[42] = findViewById(R.id.kartNo42);
+        kartNoTextView[43] = findViewById(R.id.kartNo43);
+        kartNoTextView[44] = findViewById(R.id.kartNo44);
 
         flagCheckBox[0] = findViewById(R.id.checkbox0);
         flagCheckBox[1] = findViewById(R.id.checkbox1);

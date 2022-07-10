@@ -76,6 +76,32 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/kartNoSpinner"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:entries="@array/kartNoList"
+            android:spinnerMode="dialog" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="@string/KartNoText"
+            android:textAllCaps="false"
+            android:id="@+id/kartNoSetBtn"/>
+
+    </LinearLayout>
+
 
 
     <FrameLayout

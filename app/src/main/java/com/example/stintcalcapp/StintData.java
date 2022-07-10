@@ -13,6 +13,7 @@ public class StintData extends Application {
     private int stintCnt = 45;
     private int driverCnt = 9;
     private int pauseCnt = 0;
+    private int kartNo = 0;
 
     /**
      * [スティント数][データ数]
@@ -21,7 +22,7 @@ public class StintData extends Application {
      * データ2 = スティントの終了時間
      * データ3 = ドライバー名
      */
-    private String raceData[][] = new String[maxStintCount][4];
+    private String raceData[][] = new String[maxStintCount][5];
 
     @Override
     public void onCreate() {
@@ -32,6 +33,7 @@ public class StintData extends Application {
             raceData[i][1] = "00:00";
             raceData[i][2] = "00:00";
             raceData[i][3] = "-";
+            raceData[i][4] = "0";
         }
 
         for (int i = 0; i < raceData.length; i++) {
@@ -60,6 +62,7 @@ public class StintData extends Application {
      * データ1 = スティントの開始の時間
      * データ2 = スティントの終了時間
      * データ3 = ドライバー名
+     * データ4 = カートの号車
      * @return
      */
     public String[][] getRaceData() {
@@ -84,6 +87,10 @@ public class StintData extends Application {
 
     public void setDriver(int stint, String driverName) {
         this.raceData[stint][3] = driverName;
+    }
+
+    public void setKartNo(int stint, String kartNo) {
+        this.raceData[stint][4] = kartNo;
     }
 
     public int getMaxStintCount() {
@@ -122,6 +129,11 @@ public class StintData extends Application {
         this.pauseCnt = pauseCnt;
     }
 
+    public int getKartNo(int stint) {
+        kartNo = Integer.parseInt(this.raceData[stint][4]);
+        return kartNo;
+    }
+
     /**
      * Stint数よりも先のデータを初期化
      */
@@ -131,6 +143,7 @@ public class StintData extends Application {
             raceData[i][1] = "00:00";
             raceData[i][2] = "00:00";
             raceData[i][3] = "-";
+            raceData[i][4] = "0";
         }
     }
 }

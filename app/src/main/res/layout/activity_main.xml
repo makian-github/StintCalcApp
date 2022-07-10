@@ -201,6 +201,12 @@
                 android:text="@string/driverNameText"
                 android:textAlignment="center" />
 
+            <TextView
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/KartNoText"
+                android:textAlignment="center" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -247,6 +253,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo0"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton0"
                 android:layout_width="80dp"
@@ -260,6 +273,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:layout_marginLeft="10dp"
+                android:visibility="gone"
                 android:text="@string/save_text" />
 
             <Button
@@ -268,6 +282,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:layout_marginLeft="10dp"
+                android:visibility="gone"
                 android:text="@string/read_text" />
 
         </LinearLayout>
@@ -311,6 +326,13 @@
 
             <TextView
                 android:id="@+id/driver1"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo1"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -385,6 +407,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo2"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton2"
                 android:layout_width="80dp"
@@ -396,7 +425,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="終了時間を固定"/>
+                android:text="終了時間固定"/>
 
             <ToggleButton
                 android:id="@+id/endTimeFixed"
@@ -454,6 +483,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo3"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton3"
                 android:layout_width="80dp"
@@ -461,13 +497,14 @@
                 android:layout_gravity="top"
                 android:text="@string/Set" />
 
-            <TextView
-                android:id="@+id/driver0Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="秋間   :"
-                android:textAlignment="center" />
+            <Button
+                android:id="@+id/setDriverAkima"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:text="秋間" />
+
             <TextView
                 android:id="@+id/driver0SumTime"
                 android:layout_width="@dimen/driverBtn_width_set"
@@ -475,13 +512,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
-            <Button
-                android:id="@+id/setDriverAkima"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:text="@string/Set" />
 
         </LinearLayout>
 
@@ -529,6 +559,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo4"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton4"
                 android:layout_width="80dp"
@@ -536,13 +573,14 @@
                 android:layout_gravity="top"
                 android:text="@string/Set" />
 
-            <TextView
-                android:id="@+id/driver1Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="豊口   :"
-                android:textAlignment="center" />
+            <Button
+                android:id="@+id/setDriverToyoguchi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:text="豊口" />
+
             <TextView
                 android:id="@+id/driver1SumTime"
                 android:layout_width="@dimen/driverBtn_width_set"
@@ -550,13 +588,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
-            <Button
-                android:id="@+id/setDriverToyoguchi"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:text="@string/Set" />
 
         </LinearLayout>
 
@@ -604,6 +635,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo5"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton5"
                 android:layout_width="80dp"
@@ -611,13 +649,14 @@
                 android:layout_gravity="top"
                 android:text="@string/Set" />
 
-            <TextView
-                android:id="@+id/driver2Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="吉戒   :"
-                android:textAlignment="center" />
+            <Button
+                android:id="@+id/setDriverYoshikai"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:text="吉戒" />
+
             <TextView
                 android:id="@+id/driver2SumTime"
                 android:layout_width="@dimen/driverBtn_width_set"
@@ -625,13 +664,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
-            <Button
-                android:id="@+id/setDriverYoshikai"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -678,20 +710,26 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo6"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton6"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/Set" />
-
-            <TextView
-                android:id="@+id/driver3Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="ルーク:"
-                android:textAlignment="center" />
+            <Button
+                android:id="@+id/setDriverLuke"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:text="ルーク" />
             <TextView
                 android:id="@+id/driver3SumTime"
                 android:layout_width="@dimen/driverBtn_width_set"
@@ -699,13 +737,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
-            <Button
-                android:id="@+id/setDriverLuke"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -752,6 +783,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo7"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton7"
                 android:layout_width="80dp"
@@ -759,13 +797,13 @@
                 android:layout_gravity="top"
                 android:text="@string/Set" />
 
-            <TextView
-                android:id="@+id/driver4Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="横田   :"
-                android:textAlignment="center" />
+            <Button
+                android:id="@+id/setDriverYokota"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:text="横田" />
             <TextView
                 android:id="@+id/driver4SumTime"
                 android:layout_width="@dimen/driverBtn_width_set"
@@ -773,13 +811,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
-            <Button
-                android:id="@+id/setDriverYokota"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -826,6 +857,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo8"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton8"
                 android:layout_width="80dp"
@@ -833,13 +871,13 @@
                 android:layout_gravity="top"
                 android:text="@string/Set" />
 
-            <TextView
-                android:id="@+id/driver5Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="坪井   :"
-                android:textAlignment="center" />
+            <Button
+                android:id="@+id/setDriverTuboi"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:text="坪井" />
             <TextView
                 android:id="@+id/driver5SumTime"
                 android:layout_width="@dimen/driverBtn_width_set"
@@ -847,13 +885,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
-            <Button
-                android:id="@+id/setDriverTuboi"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -900,6 +931,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo9"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton9"
                 android:layout_width="80dp"
@@ -907,13 +945,13 @@
                 android:layout_gravity="top"
                 android:text="@string/Set" />
 
-            <TextView
-                android:id="@+id/driver6Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="新田   :"
-                android:textAlignment="center" />
+            <Button
+                android:id="@+id/setDriverNitta"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:text="新田" />
             <TextView
                 android:id="@+id/driver6SumTime"
                 android:layout_width="@dimen/driverBtn_width_set"
@@ -921,14 +959,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
-            <Button
-                android:id="@+id/setDriverNitta"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:text="@string/Set" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -975,6 +1005,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo10"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton10"
                 android:layout_width="80dp"
@@ -982,13 +1019,13 @@
                 android:layout_gravity="top"
                 android:text="@string/Set" />
 
-            <TextView
-                android:id="@+id/driver7Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="X　    :"
-                android:textAlignment="center" />
+            <Button
+                android:id="@+id/setDriverX"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:text="X" />
             <TextView
                 android:id="@+id/driver7SumTime"
                 android:layout_width="@dimen/driverBtn_width_set"
@@ -996,13 +1033,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
-            <Button
-                android:id="@+id/setDriverX"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1049,6 +1079,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo11"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton11"
                 android:layout_width="80dp"
@@ -1056,13 +1093,13 @@
                 android:layout_gravity="top"
                 android:text="@string/Set" />
 
-            <TextView
-                android:id="@+id/driver8Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="未設定:"
-                android:textAlignment="center" />
+            <Button
+                android:id="@+id/setDriverNull"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:text="未設定" />
             <TextView
                 android:id="@+id/driver8SumTime"
                 android:layout_width="wrap_content"
@@ -1070,13 +1107,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
-            <Button
-                android:id="@+id/setDriverNull"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1123,6 +1153,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo12"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton12"
                 android:layout_width="80dp"
@@ -1130,13 +1167,13 @@
                 android:layout_gravity="top"
                 android:text="@string/Set" />
 
-            <TextView
-                android:id="@+id/driver9Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="中断   :"
-                android:textAlignment="center" />
+            <Button
+                android:id="@+id/setPause"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="5dp"
+                android:text="中断" />
             <TextView
                 android:id="@+id/driver9SumTime"
                 android:layout_width="@dimen/driverBtn_width_set"
@@ -1144,13 +1181,6 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
-            <Button
-                android:id="@+id/setPause"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:layout_marginLeft="5dp"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1192,6 +1222,13 @@
 
             <TextView
                 android:id="@+id/driver13"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo13"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -1264,6 +1301,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo14"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton14"
                 android:layout_width="80dp"
@@ -1311,6 +1355,13 @@
 
             <TextView
                 android:id="@+id/driver15"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo15"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -1368,6 +1419,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo16"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton16"
                 android:layout_width="80dp"
@@ -1415,6 +1473,13 @@
 
             <TextView
                 android:id="@+id/driver17"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo17"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -1472,6 +1537,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo18"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton18"
                 android:layout_width="80dp"
@@ -1519,6 +1591,13 @@
 
             <TextView
                 android:id="@+id/driver19"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo19"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -1576,6 +1655,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo20"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton20"
                 android:layout_width="80dp"
@@ -1623,6 +1709,13 @@
 
             <TextView
                 android:id="@+id/driver21"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo21"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -1680,6 +1773,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo22"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton22"
                 android:layout_width="80dp"
@@ -1727,6 +1827,13 @@
 
             <TextView
                 android:id="@+id/driver23"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo23"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -1784,6 +1891,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo24"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton24"
                 android:layout_width="80dp"
@@ -1831,6 +1945,13 @@
 
             <TextView
                 android:id="@+id/driver25"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo25"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -1888,6 +2009,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo26"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton26"
                 android:layout_width="80dp"
@@ -1935,6 +2063,13 @@
 
             <TextView
                 android:id="@+id/driver27"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo27"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -1992,6 +2127,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo28"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton28"
                 android:layout_width="80dp"
@@ -2039,6 +2181,13 @@
 
             <TextView
                 android:id="@+id/driver29"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo29"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -2096,6 +2245,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo30"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton30"
                 android:layout_width="80dp"
@@ -2139,6 +2295,13 @@
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_time"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo31"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
                 android:textAlignment="center" />
 
             <TextView
@@ -2200,6 +2363,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo32"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton32"
                 android:layout_width="80dp"
@@ -2247,6 +2417,13 @@
 
             <TextView
                 android:id="@+id/driver33"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo33"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -2304,6 +2481,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo34"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton34"
                 android:layout_width="80dp"
@@ -2351,6 +2535,13 @@
 
             <TextView
                 android:id="@+id/driver35"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo35"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -2408,6 +2599,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo36"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton36"
                 android:layout_width="80dp"
@@ -2455,6 +2653,13 @@
 
             <TextView
                 android:id="@+id/driver37"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo37"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -2512,6 +2717,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo38"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton38"
                 android:layout_width="80dp"
@@ -2559,6 +2771,13 @@
 
             <TextView
                 android:id="@+id/driver39"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo39"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -2616,6 +2835,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo40"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton40"
                 android:layout_width="80dp"
@@ -2663,6 +2889,13 @@
 
             <TextView
                 android:id="@+id/driver41"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo41"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
@@ -2720,6 +2953,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo42"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton42"
                 android:layout_width="80dp"
@@ -2772,6 +3012,13 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/kartNo43"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
             <Button
                 android:id="@+id/setButton43"
                 android:layout_width="80dp"
@@ -2819,6 +3066,13 @@
 
             <TextView
                 android:id="@+id/driver44"
+                android:layout_width="@dimen/textView_width"
+                android:layout_height="@dimen/textView_height"
+                android:text="@string/def_driver"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/kartNo44"
                 android:layout_width="@dimen/textView_width"
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"

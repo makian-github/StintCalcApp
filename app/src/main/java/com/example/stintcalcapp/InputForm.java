@@ -26,8 +26,10 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
     private EditText driverNameText;
     private Spinner driverSpinner;
     private Button driverSetBtn;
+    private Button kartNoSetBtn;
     private int stintNum;
     private int Button;
+    private Spinner kartNoSpinner;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,12 +50,27 @@ public class InputForm extends AppCompatActivity implements TimePickerDialog.OnT
         driverSpinner = findViewById(R.id.driverSpinner);
         driverSetBtn = findViewById(R.id.driverSetBtn);
 
+        kartNoSpinner = findViewById(R.id.kartNoSpinner);
+        kartNoSetBtn = findViewById(R.id.kartNoSetBtn);
+
+        //driverSpinner.setSelection(stintData.getDriverName(stintNum));
+        kartNoSpinner.setSelection(stintData.getKartNo(stintNum));
+
+
         driverSetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //String name = driverNameText.getText().toString();
                 String name = (String)driverSpinner.getSelectedItem();
                 stintData.setDriver(stintNum,name);
+            }
+        });
+
+        kartNoSetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String kartNo = (String)kartNoSpinner.getSelectedItem();
+                stintData.setKartNo(stintNum,kartNo);
             }
         });
 
