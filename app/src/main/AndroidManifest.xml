@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".InputForm"></activity>
+        <activity android:name=".qrCreateActivity" ></activity>
     </application>
 
 </manifest>

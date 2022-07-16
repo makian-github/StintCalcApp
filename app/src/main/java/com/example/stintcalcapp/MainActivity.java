@@ -1,11 +1,10 @@
 package com.example.stintcalcapp;
 
-import androidx.annotation.LongDef;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -74,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
     //120%ルール用の係数
     private final double COEF = 1.2;
 
+    private SharedPreferences dataStore;
+    private SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
         endTimeFile = new File(context.getFilesDir(), endTimeFileName);
         runTimeFile = new File(context.getFilesDir(), runTimeFileName);
         driverTimeFile = new File(context.getFilesDir(), driverTimeFileName);
+
+        // "DataStore"という名前でインスタンスを生成
+        dataStore = getSharedPreferences("DataStore", MODE_PRIVATE);
+        editor = dataStore.edit();
 
     }
 
@@ -124,8 +130,8 @@ public class MainActivity extends AppCompatActivity {
 
         defineId();
 
-        Button setButton0 = findViewById(R.id.setButton0);
-        Button setButton1 = findViewById(R.id.setButton1);
+        Button setButton0 = findViewById(R.id.creatButton);
+        Button setButton1 = findViewById(R.id.readButton);
         Button setButton2 = findViewById(R.id.setButton2);
         Button setButton3 = findViewById(R.id.setButton3);
         Button setButton4 = findViewById(R.id.setButton4);
@@ -198,6 +204,8 @@ public class MainActivity extends AppCompatActivity {
         Button xBtn = findViewById(R.id.setDriverX);
         Button nullBtn = findViewById(R.id.setDriverNull);
         Button pauseBtn = findViewById(R.id.setPause);
+
+        Button qrBtn = findViewById(R.id.qrCreateBtn);
 
         perStintCalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -806,6 +814,37 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 readFile();
                 displayUpdate();
+            }
+        });
+
+        qrBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String startTimeText = "";
+                String endTimeText = "";
+                String driverTimeText = "";
+                String kartNoText = "";
+
+                for (int i = 0; i < stintData.getMaxStintCount(); i++) {
+                    if (i==0){
+                        startTimeText = String.valueOf(stintData.getRaceData()[i][1]);
+                        endTimeText =String.valueOf(stintData.getRaceData()[i][2]);
+                        driverTimeText = String.valueOf(stintData.getRaceData()[i][3]);
+                        kartNoText = String.valueOf(stintData.getRaceData()[i][4]);
+                    }else {
+                        startTimeText += "," + String.valueOf(stintData.getRaceData()[i][1]);
+                        endTimeText += "," + String.valueOf(stintData.getRaceData()[i][2]);
+                        driverTimeText += "," + String.valueOf(stintData.getRaceData()[i][3]);
+                        kartNoText += "," + String.valueOf(stintData.getRaceData()[i][4]);
+                    }
+                }
+
+                editor.putString("input", "start:" + startTimeText + ",end:" + endTimeText + ",driver:" + driverTimeText + ",KartNo:" + kartNoText);
+                //editor.putString("input", "driver:" + driverTimeText);
+                editor.apply();
+
+                Intent intent = new Intent(getApplication(), qrCreateActivity.class);
+                startActivity(intent);
             }
         });
 

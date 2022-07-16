@@ -261,7 +261,7 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton0"
+                android:id="@+id/creatButton"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:layout_gravity="top"
@@ -275,6 +275,14 @@
                 android:layout_marginLeft="10dp"
                 android:visibility="gone"
                 android:text="@string/save_text" />
+
+            <Button
+                android:id="@+id/qrCreateBtn"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top"
+                android:layout_marginLeft="10dp"
+                android:text="QR" />
 
             <Button
                 android:id="@+id/readBtn"
@@ -339,7 +347,7 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton1"
+                android:id="@+id/readButton"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:layout_gravity="top"
@@ -359,6 +367,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="top"
                 android:text="@string/startRaceBtn"
+                android:visibility="gone"
                 android:textAllCaps="false" />
 
         </LinearLayout>
