@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -76,10 +77,14 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences dataStore;
     private SharedPreferences.Editor editor;
 
+    private String[] driverList;
+    private Resources res;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        res = getResources();
 
         //ファイル出力用のファイルを新規作成
         Context context = getApplicationContext();
@@ -96,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
         endTimeFile = new File(context.getFilesDir(), endTimeFileName);
         runTimeFile = new File(context.getFilesDir(), runTimeFileName);
         driverTimeFile = new File(context.getFilesDir(), driverTimeFileName);
+
+        driverList = res.getStringArray(R.array.driverList);
 
         // "DataStore"という名前でインスタンスを生成
         dataStore = getSharedPreferences("DataStore", MODE_PRIVATE);
@@ -820,27 +827,18 @@ public class MainActivity extends AppCompatActivity {
         qrBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String startTimeText = "";
-                String endTimeText = "";
-                String driverTimeText = "";
-                String kartNoText = "";
+
+                String data = "";
 
                 for (int i = 0; i < stintData.getMaxStintCount(); i++) {
-                    if (i==0){
-                        startTimeText = String.valueOf(stintData.getRaceData()[i][1]);
-                        endTimeText =String.valueOf(stintData.getRaceData()[i][2]);
-                        driverTimeText = String.valueOf(stintData.getRaceData()[i][3]);
-                        kartNoText = String.valueOf(stintData.getRaceData()[i][4]);
-                    }else {
-                        startTimeText += "," + String.valueOf(stintData.getRaceData()[i][1]);
-                        endTimeText += "," + String.valueOf(stintData.getRaceData()[i][2]);
-                        driverTimeText += "," + String.valueOf(stintData.getRaceData()[i][3]);
-                        kartNoText += "," + String.valueOf(stintData.getRaceData()[i][4]);
-                    }
+
+                    data += String.valueOf(stintData.getRaceData()[i][1]) + ","
+                            + String.valueOf(stintData.getRaceData()[i][2]) + ","
+                            + getDriverNum(String.valueOf(stintData.getRaceData()[i][3])) + ","
+                            + String.valueOf(stintData.getRaceData()[i][4]) + ",";
                 }
 
-                editor.putString("input", "start:" + startTimeText + ",end:" + endTimeText + ",driver:" + driverTimeText + ",KartNo:" + kartNoText);
-                //editor.putString("input", "driver:" + driverTimeText);
+                editor.putString("input", "startTime,endTime,driverName,KartNo," + data);
                 editor.apply();
 
                 Intent intent = new Intent(getApplication(), qrCreateActivity.class);
@@ -1320,6 +1318,19 @@ public class MainActivity extends AppCompatActivity {
             Log.d("driverSet","stintData.getDriver(" + i + ") = " + stintData.getDriverName(i));
         }
         displayUpdate();
+    }
+
+    private String getDriverNum(String name){
+        String driverNum = "0";
+        for (int i = 0; i < driverList.length; i++) {
+            if (name.equals(driverList[i])){
+                driverNum = Integer.toString(i);
+            }else{
+                Log.v("MainActivity","driverNo. not found");
+            }
+        }
+
+        return driverNum;
     }
 
     private void defineId(){
