@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.io.BufferedReader;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     private int[] runTime;
     private TextView[] runSumTimeTextView;
     private TextView maxRunTimeTextView;
+    private TextView[] stintCntTextView;
+    private String[] driverItem;
 
     private int pauseCnt = 0;
 
@@ -108,6 +111,9 @@ public class MainActivity extends AppCompatActivity {
         dataStore = getSharedPreferences("DataStore", MODE_PRIVATE);
         editor = dataStore.edit();
 
+        driverItem = new String[10];
+
+
     }
 
     @Override
@@ -135,53 +141,23 @@ public class MainActivity extends AppCompatActivity {
 
         runSumTimeTextView = new TextView[stintData.getDriverCnt()+1];
 
+        stintCntTextView = new TextView[10];
+
+        driverItem = new String[10];
+        driverItem[0] = "秋間";
+        driverItem[1] = "豊口";
+        driverItem[2] = "吉戒";
+        driverItem[3] = "ルーク";
+        driverItem[4] = "横田";
+        driverItem[5] = "坪井";
+        driverItem[6] = "新田";
+        driverItem[7] = "X";
+        driverItem[8] = "未設定";
+        driverItem[9] = "中断";
+
         defineId();
 
         Button setButton0 = findViewById(R.id.creatButton);
-        Button setButton1 = findViewById(R.id.readButton);
-        Button setButton2 = findViewById(R.id.setButton2);
-        Button setButton3 = findViewById(R.id.setButton3);
-        Button setButton4 = findViewById(R.id.setButton4);
-        Button setButton5 = findViewById(R.id.setButton5);
-        Button setButton6 = findViewById(R.id.setButton6);
-        Button setButton7 = findViewById(R.id.setButton7);
-        Button setButton8 = findViewById(R.id.setButton8);
-        Button setButton9 = findViewById(R.id.setButton9);
-        Button setButton10 = findViewById(R.id.setButton10);
-        Button setButton11 = findViewById(R.id.setButton11);
-        Button setButton12 = findViewById(R.id.setButton12);
-        Button setButton13 = findViewById(R.id.setButton13);
-        Button setButton14 = findViewById(R.id.setButton14);
-        Button setButton15 = findViewById(R.id.setButton15);
-        Button setButton16 = findViewById(R.id.setButton16);
-        Button setButton17 = findViewById(R.id.setButton17);
-        Button setButton18 = findViewById(R.id.setButton18);
-        Button setButton19 = findViewById(R.id.setButton19);
-        Button setButton20 = findViewById(R.id.setButton20);
-        Button setButton21 = findViewById(R.id.setButton21);
-        Button setButton22 = findViewById(R.id.setButton22);
-        Button setButton23 = findViewById(R.id.setButton23);
-        Button setButton24 = findViewById(R.id.setButton24);
-        Button setButton25 = findViewById(R.id.setButton25);
-        Button setButton26 = findViewById(R.id.setButton26);
-        Button setButton27 = findViewById(R.id.setButton27);
-        Button setButton28 = findViewById(R.id.setButton28);
-        Button setButton29 = findViewById(R.id.setButton29);
-        Button setButton30 = findViewById(R.id.setButton30);
-        Button setButton31 = findViewById(R.id.setButton31);
-        Button setButton32 = findViewById(R.id.setButton32);
-        Button setButton33 = findViewById(R.id.setButton33);
-        Button setButton34 = findViewById(R.id.setButton34);
-        Button setButton35 = findViewById(R.id.setButton35);
-        Button setButton36 = findViewById(R.id.setButton36);
-        Button setButton37 = findViewById(R.id.setButton37);
-        Button setButton38 = findViewById(R.id.setButton38);
-        Button setButton39 = findViewById(R.id.setButton39);
-        Button setButton40 = findViewById(R.id.setButton40);
-        Button setButton41 = findViewById(R.id.setButton41);
-        Button setButton42 = findViewById(R.id.setButton42);
-        Button setButton43 = findViewById(R.id.setButton43);
-        Button setButton44 = findViewById(R.id.setButton44);
 
         Button perStintCalcBtn = findViewById(R.id.perStintCalcBtn);
         Button perStintSetBtn = findViewById(R.id.perStintSetBtn);
@@ -428,386 +404,23 @@ public class MainActivity extends AppCompatActivity {
         setButton0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 0);//第一引数key、第二引数渡したい値
-                startActivity(intent);
+                int checkedBoxesCnt = checkedBoxesCnt();
+                if(checkedBoxesCnt==1){
+                    Intent intent = new Intent(getApplication(), InputForm.class);
+                    intent.putExtra("Stint", firstCheckBox());//第一引数key、第二引数渡したい値
+                    startActivity(intent);
+                }else if(checkedBoxesCnt == 0){
+                    Context context = getApplicationContext();
+                    Toast.makeText(context,"チェックボックスにチェックがついていますせん",Toast.LENGTH_LONG).show();
+                }else{
+                    Context context = getApplicationContext();
+                    Toast.makeText(context,"複数のチェックボックスにチェックがついています",Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
-        setButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 1);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
 
-        setButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 2);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 3);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 4);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 5);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 6);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 7);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 8);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 9);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 10);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 11);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 12);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton13.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 13);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton14.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 14);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-
-        setButton15.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 15);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton16.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 16);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton17.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 17);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton18.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 18);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton19.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 19);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton20.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 20);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton21.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 21);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton22.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 22);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton23.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 23);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton24.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 24);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton25.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 25);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton26.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 26);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton27.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 27);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton28.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 28);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton29.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 29);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton30.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 30);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton30.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 30);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton31.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 31);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton32.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 32);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton33.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 33);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton34.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 34);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton35.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 35);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton36.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 36);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton37.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 37);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton38.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 38);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton39.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 39);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton40.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 40);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton41.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 41);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton42.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 42);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton43.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 43);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
-        setButton44.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), InputForm.class);
-                intent.putExtra("Stint", 44);//第一引数key、第二引数渡したい値
-                startActivity(intent);
-            }
-        });
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -961,6 +574,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * チェックボックスがついている最初のチェックボックスを返す
+     * @return チェックのついている最初のチェックボックスの番号
+     */
+    private int firstCheckBox(){
+        int firstChkBox = 0;
+        for (int i = 0; i <= allStintCnt(); i++) {
+            if (flagCheckBox[i].isChecked()){
+                firstChkBox = i;
+                break;
+            }
+        }
+        return firstChkBox;
+    }
+
+    /**
+     * チェックがついているチェックボックスの数を返す
+     * @return チェックがついているチェックボックスの数
+     */
+    private int checkedBoxesCnt(){
+        int checkedBoxesCnt=0;
+        for (int i = 0; i <= allStintCnt(); i++) {
+            if (flagCheckBox[i].isChecked()){
+                checkedBoxesCnt++;
+            }
+        }
+        return checkedBoxesCnt;
+    }
+
+    /**
      * 表示を更新
      * StintDataから値を取得
      */
@@ -981,6 +623,7 @@ public class MainActivity extends AppCompatActivity {
 
         //各ドライバーの走行時間の計算・更新
         setRuntimeSum();
+        stintCnt();
     }
 
 
@@ -1333,6 +976,13 @@ public class MainActivity extends AppCompatActivity {
         return driverNum;
     }
 
+    private void stintCnt(){
+        for (int i = 0; i < driverItem.length; i++) {
+            stintCntTextView[i].setText(stintData.getCntStintPerDriver(driverItem[i]) + "stint");
+            Log.v("MainActivity","driverName:" + driverItem[i] + ",Stint:" + stintData.getCntStintPerDriver(driverItem[i]));
+        }
+    }
+
     private void defineId(){
         //idの紐づけ
         startTimeTextView[0] = findViewById(R.id.startTime0);
@@ -1656,6 +1306,17 @@ public class MainActivity extends AppCompatActivity {
         runSumTimeTextView[8]  = findViewById(R.id.driver8SumTime);
         runSumTimeTextView[9]  = findViewById(R.id.driver9SumTime);
         maxRunTimeTextView = findViewById(R.id.maxRunTimeTextView);
+
+        stintCntTextView[0] = findViewById(R.id.driver0StintCnt);
+        stintCntTextView[1] = findViewById(R.id.driver1StintCnt);
+        stintCntTextView[2] = findViewById(R.id.driver2StintCnt);
+        stintCntTextView[3] = findViewById(R.id.driver3StintCnt);
+        stintCntTextView[4] = findViewById(R.id.driver4StintCnt);
+        stintCntTextView[5] = findViewById(R.id.driver5StintCnt);
+        stintCntTextView[6] = findViewById(R.id.driver6StintCnt);
+        stintCntTextView[7] = findViewById(R.id.driver7StintCnt);
+        stintCntTextView[8] = findViewById(R.id.driver8StintCnt);
+        stintCntTextView[9] = findViewById(R.id.driver9StintCnt);
 
         endTimeFixedToggle = findViewById(R.id.endTimeFixed);
     }

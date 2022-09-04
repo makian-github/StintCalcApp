@@ -173,4 +173,14 @@ public class StintData extends Application {
         Log.v(TAG,"getDriverListNo driverNo = " + driverNo);
         return driverNo;
     }
+
+    public int getCntStintPerDriver(String driverName){
+        int cntStintPerDriver = 0;
+        for (int i = 0; i < raceData.length; i++) {
+            if(raceData[i][3].equals(driverName)){
+                cntStintPerDriver++;
+            }
+        }
+        return cntStintPerDriver;
+    }
 }

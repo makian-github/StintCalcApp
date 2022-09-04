@@ -346,13 +346,6 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
-            <Button
-                android:id="@+id/readButton"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-
             <TextView
                 android:id="@+id/statusText"
                 android:layout_width="wrap_content"
@@ -422,13 +415,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton2"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -500,13 +486,6 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton3"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-
-            <Button
                 android:id="@+id/setDriverAkima"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -521,6 +500,13 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver0StintCnt"
+                android:layout_width="@dimen/driverBtn_width_set"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00 stint" />
 
         </LinearLayout>
 
@@ -576,13 +562,6 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton4"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-
-            <Button
                 android:id="@+id/setDriverToyoguchi"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -598,6 +577,12 @@
                 android:text="00:00"
                 android:textAlignment="center" />
 
+            <TextView
+                android:id="@+id/driver1StintCnt"
+                android:layout_width="@dimen/driverBtn_width_set"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00 stint" />
         </LinearLayout>
 
         <LinearLayout
@@ -652,13 +637,6 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton5"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-
-            <Button
                 android:id="@+id/setDriverYoshikai"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -673,6 +651,13 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver2StintCnt"
+                android:layout_width="@dimen/driverBtn_width_set"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00 stint" />
         </LinearLayout>
 
         <LinearLayout
@@ -727,12 +712,6 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton6"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-            <Button
                 android:id="@+id/setDriverLuke"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -746,6 +725,13 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver3StintCnt"
+                android:layout_width="@dimen/driverBtn_width_set"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00 stint" />
         </LinearLayout>
 
         <LinearLayout
@@ -800,13 +786,6 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton7"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-
-            <Button
                 android:id="@+id/setDriverYokota"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -820,6 +799,13 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver4StintCnt"
+                android:layout_width="@dimen/driverBtn_width_set"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00 stint" />
         </LinearLayout>
 
         <LinearLayout
@@ -874,13 +860,6 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton8"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-
-            <Button
                 android:id="@+id/setDriverTuboi"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -894,6 +873,12 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver5StintCnt"
+                android:layout_width="@dimen/driverBtn_width_set"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00 stint" />
         </LinearLayout>
 
         <LinearLayout
@@ -948,13 +933,6 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton9"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-
-            <Button
                 android:id="@+id/setDriverNitta"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -968,6 +946,12 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver6StintCnt"
+                android:layout_width="@dimen/driverBtn_width_set"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00 stint" />
         </LinearLayout>
 
         <LinearLayout
@@ -1022,13 +1006,6 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton10"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-
-            <Button
                 android:id="@+id/setDriverX"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -1042,6 +1019,12 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
+            <TextView
+                android:id="@+id/driver7StintCnt"
+                android:layout_width="@dimen/driverBtn_width_set"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00 stint" />
         </LinearLayout>
 
         <LinearLayout
@@ -1096,13 +1079,6 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton11"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-
-            <Button
                 android:id="@+id/setDriverNull"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -1111,11 +1087,18 @@
                 android:text="未設定" />
             <TextView
                 android:id="@+id/driver8SumTime"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/driverBtn_width_set"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver8StintCnt"
+                android:layout_width="@dimen/driverBtn_width_set"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00 stint" />
         </LinearLayout>
 
         <LinearLayout
@@ -1170,13 +1153,6 @@
                 android:textAlignment="center" />
 
             <Button
-                android:id="@+id/setButton12"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
-
-            <Button
                 android:id="@+id/setPause"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -1190,6 +1166,13 @@
                 android:layout_marginLeft="10dp"
                 android:text="00:00"
                 android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/driver9StintCnt"
+                android:layout_width="@dimen/driverBtn_width_set"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="00 stint" />
         </LinearLayout>
 
         <LinearLayout
@@ -1243,12 +1226,6 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
-            <Button
-                android:id="@+id/setButton13"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
             <TextView
                 android:id="@+id/maxRunTimeText"
                 android:layout_width="wrap_content"
@@ -1384,12 +1361,6 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
-            <Button
-                android:id="@+id/setButton15"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1443,12 +1414,6 @@
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
 
-            <Button
-                android:id="@+id/setButton16"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1501,13 +1466,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton17"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1560,13 +1518,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton18"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1619,13 +1570,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton19"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1678,13 +1622,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton20"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1737,13 +1674,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton21"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1796,13 +1726,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton22"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1855,13 +1778,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton23"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1914,13 +1830,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton24"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -1973,13 +1882,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton25"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2032,13 +1934,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton26"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2091,13 +1986,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton27"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2150,13 +2038,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton28"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2209,13 +2090,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton29"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2268,13 +2142,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton30"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2327,13 +2194,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton31"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2386,13 +2246,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton32"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2445,13 +2298,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton33"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2504,13 +2350,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton34"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2563,13 +2402,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton35"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2622,13 +2454,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton36"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2681,13 +2506,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton37"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2740,13 +2558,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton38"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2799,13 +2610,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton39"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2858,13 +2662,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton40"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2917,13 +2714,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton41"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -2976,13 +2766,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton42"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -3035,13 +2818,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton43"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
 
         <LinearLayout
@@ -3094,13 +2870,6 @@
                 android:layout_height="@dimen/textView_height"
                 android:text="@string/def_driver"
                 android:textAlignment="center" />
-
-            <Button
-                android:id="@+id/setButton44"
-                android:layout_width="80dp"
-                android:layout_height="40dp"
-                android:layout_gravity="top"
-                android:text="@string/Set" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

@@ -74,5 +74,26 @@ public class TimeCalc {
         return time;
     }
 
+    /**
+     * 引数で渡された時刻の時間差を分で返す(bTimeをaTimeにするための分)
+     * @param bTime 比較元の時刻
+     * @param aTime 比較先の時刻
+     * @return
+     */
+    public int calcDiffMin(String bTime, String aTime ){
+        Log.d("TimeCalc calcDiffMin InputForm", "calcDiffMin");
+        int diffMin;
+        int bTimeHour = hourExtraction(bTime);
+        int bTimeMin = minutesExtraction(bTime);
+
+        int aTimeHour = hourExtraction(aTime);
+        int aTimeMin = minutesExtraction(aTime);
+
+        diffMin = (aTimeHour-bTimeHour)*60+(aTimeMin-bTimeMin);
+
+        Log.d("TimeCalc calcDiffMin InputForm", "diffMin:" + diffMin);
+        return diffMin;
+    }
+
 
 }
